@@ -30,7 +30,7 @@ export const packages: Package[] = [
     id: "sacred-kashmir-complete",
     title: "Sacred Kashmir",
     subtitle: "Complete Spiritual Journey",
-    image: "https://static.vecteezy.com/system/resources/previews/032/190/016/non_2x/the-stunning-landscapes-in-kashmir-captures-the-serene-beauty-generative-ai-free-photo.jpg",
+    image: "/images/gallery/the-stunning-landscapes-in-kashmir-captures-the-serene-beauty-generative-ai-free-photo.jpg",
     duration: "15 Days 14 Nights",
     locations: ["Srinagar", "Anantnag", "Ganderbal", "Pahalgam"],
     price: "$3,999",
@@ -48,105 +48,134 @@ export const packages: Package[] = [
       "Shikara Ride in Dal Lake",
       "Transfers & Sightseeing",
       "Pilgrim visits to Temples, Ashram & Shrines",
-      "Sufi Music Night",
-      "Arts & Handicrafts Exhibition",
-      "Spiritual Healer sessions",
-      "Meditation & Satsang"
+      "Special welcome & farewell dinners"
     ],
     accommodation: [
       {
         location: "Srinagar",
-        nights: "12 Nights",
-        resort: "MAQAM"
+        nights: "7 Nights",
+        resort: "Sukoon Houseboat & MAQAM Resort"
       },
       {
         location: "Pahalgam",
-        nights: "1 Night",
-        resort: "SOJOURN COTTAGES"
+        nights: "3 Nights",
+        resort: "Pine Valley Resort"
       },
       {
-        location: "Lidwas Meadow",
-        nights: "1 Night",
-        resort: "Base Camp"
+        location: "Anantnag",
+        nights: "2 Nights",
+        resort: "Heritage Mountain Lodge"
+      },
+      {
+        location: "Ganderbal",
+        nights: "2 Nights",
+        resort: "Forest Retreat"
       }
     ],
-    description: "Our flagship tour guided by renowned spiritual teacher Andrew Harvey. This complete 15-day spiritual journey takes you through the mystical landscapes of Kashmir, offering profound experiences of self-discovery, healing, and spiritual awakening. Each day is thoughtfully designed to immerse you in Kashmiri culture, spirituality, and natural beauty.",
+    description: "An intensive 15-day spiritual journey through the most sacred locations in Kashmir, guided by globally renowned mystical scholar Andrew Harvey. This transformative experience combines daily meditation practices, visits to ancient power sites, spiritual teachings, and immersion in the breathtaking natural beauty of the Himalayas.",
     itinerary: [
       {
         day: "Day 1",
-        title: "Arrival",
+        title: "Arrival & Welcome Ceremony",
         activities: [
-          "Transfer from Airport to Resort in Srinagar",
-          "Traditional welcome with Herbal Tea & Kashmiri Breads",
-          "Pilgrim Induction and introductions"
+          "Welcome at Srinagar Airport",
+          "Transfer to luxurious houseboat",
+          "Evening blessing ceremony"
         ]
       },
       {
-        day: "Days 2-3",
-        title: "Sacred Pilgrimage to Samkaropala",
+        day: "Days 2-5",
+        title: "Srinagar Sacred Sites",
         activities: [
-          "Trek to the sacred Shiva Sutra Rock",
-          "Overnight camping at Lidwas Meadow",
-          "Meditation and Satsang at Samkaropala"
+          "Meditation at Shankaracharya Temple",
+          "Visit to sacred shrines",
+          "Evening teachings with Andrew Harvey",
+          "Shikara meditation on Dal Lake"
         ]
       },
       {
-        day: "Days 4-14",
-        title: "Spiritual Immersion",
+        day: "Days 6-8",
+        title: "Pahalgam Valley Retreat",
         activities: [
-          "Visit to temples, shrines, and sacred sites",
-          "Healing sessions and meditation practices",
-          "Cultural experiences including Sufi Music Night",
-          "Traditional Wazwan feast on final evening"
+          "Transfer to mountain valley",
+          "Forest meditation practices",
+          "River purification ceremony",
+          "Silent retreat day"
         ]
       },
       {
-        day: "Day 15",
-        title: "Farewell",
+        day: "Days 9-10",
+        title: "Anantnag Sacred Springs",
         activities: [
-          "Final contemplation session",
-          "Farewell lunch",
-          "Transfer to Airport"
+          "Visit to sacred water sources",
+          "Ancient temple meditation",
+          "Meeting with local spiritual elders",
+          "Traditional Sufi music night"
+        ]
+      },
+      {
+        day: "Days 11-12",
+        title: "Ganderbal Mountain Practices",
+        activities: [
+          "Trek to Samkaropala (Shiva Sutra Rock)",
+          "Mountain meditation practices",
+          "Teaching on Kashmir Shaivism",
+          "Sunset fire ceremony"
+        ]
+      },
+      {
+        day: "Days 13-15",
+        title: "Integration & Return to Srinagar",
+        activities: [
+          "Final integration practices",
+          "Art exhibition visit",
+          "Farewell celebration dinner",
+          "Transfer to airport for departure"
         ]
       }
     ],
-    category: ["spiritual", "cultural", "adventure"],
+    category: ["spiritual", "meditation", "culture"],
     featured: true,
     rating: 4.9,
-    reviewCount: 48
+    reviewCount: 58
   },
   {
-    id: "kashmir-spiritual-essence",
-    title: "Kashmir Spiritual Essence",
-    subtitle: "Sacred Sites & Meditation",
-    image: "https://images.unsplash.com/photo-1566837486475-98933a0ecdbf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    id: "silent-meditation-retreat",
+    title: "Silent Meditation Retreat",
+    subtitle: "Inner Journey of Transformation",
+    image: "/images/gallery/photo-1566837486475-98933a0ecdbf.jpg",
     duration: "10 Days 9 Nights",
-    locations: ["Srinagar", "Anantnag"],
+    locations: ["Srinagar", "Pahalgam", "Sonamarg"],
     price: "$2,599",
     highlights: [
-      "Daily meditation sessions with expert guides",
-      "Visit to Shankaracharya Temple",
-      "Kheer Bhawani Temple experience",
-      "Spiritual healing workshops",
-      "Shikara meditation ride on Dal Lake"
+      "Silent Meditation by Dal Lake",
+      "Sacred Temple Circuit",
+      "Healing energy workshops",
+      "Daily yoga and mindfulness practices",
+      "One-on-one spiritual guidance"
     ],
     inclusions: [
-      "9 Nights at Premium Spiritual Retreats",
-      "All meals with vegetarian options",
-      "Daily meditation and yoga sessions",
-      "Temple and shrine visits",
-      "Airport transfers",
-      "Local transportation",
-      "Spiritual guide and interpreter"
+      "9 Nights at Meditation-focused Resorts",
+      "Vegetarian meals with Ayurvedic options",
+      "Daily guided meditation sessions",
+      "Sacred site entrance fees",
+      "Meditation cushions and materials",
+      "Journal and spiritual reading materials",
+      "Transfer from/to Srinagar Airport"
     ],
     accommodation: [
       {
         location: "Srinagar",
-        nights: "8 Nights",
-        resort: "MAQAM"
+        nights: "5 Nights",
+        resort: "Sukoon Houseboat & Meditation Center"
       },
       {
-        location: "Anantnag",
+        location: "Pahalgam",
+        nights: "3 Nights",
+        resort: "Silent Valley Retreat"
+      },
+      {
+        location: "Sonamarg",
         nights: "1 Night",
         resort: "Heritage Retreat"
       }
@@ -199,7 +228,7 @@ export const packages: Package[] = [
     id: "kashmir-cultural-heritage",
     title: "Kashmir Cultural Heritage",
     subtitle: "Arts, Crafts & Traditions",
-    image: "https://images.unsplash.com/photo-1583249598754-110018cb6851?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    image: "/images/gallery/photo-1583249598754-110018cb6851.jpg",
     duration: "7 Days 6 Nights",
     locations: ["Srinagar", "Ganderbal"],
     price: "$1,899",
@@ -248,70 +277,151 @@ export const packages: Package[] = [
       },
       {
         day: "Days 4-5",
-        title: "Culinary & Musical Traditions",
+        title: "Culinary & Music Traditions",
         activities: [
           "Kashmiri cooking class",
-          "Sufi Music Night",
-          "Visit to local spice markets"
+          "Traditional Wazwan feast",
+          "Sufi music night"
         ]
       },
       {
         day: "Days 6-7",
-        title: "Cultural Integration & Departure",
+        title: "Market Experience & Departure",
         activities: [
-          "Shopping at authentic markets",
-          "Traditional Wazwan feast",
-          "Departure with cultural souvenirs"
+          "Old city market visit",
+          "Souvenir shopping with expert guide",
+          "Farewell dinner and departure"
         ]
       }
     ],
-    category: ["cultural", "arts", "culinary"],
+    category: ["culture", "arts", "culinary"],
     featured: false,
     rating: 4.7,
     reviewCount: 29
   },
   {
-    id: "kashmir-nature-expedition",
-    title: "Kashmir Nature Expedition",
-    subtitle: "Mountains, Lakes & Valleys",
-    image: "https://images.unsplash.com/photo-1527786356703-4b100091cd2c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    id: "kashmir-wellness-journey",
+    title: "Kashmir Wellness Journey",
+    subtitle: "Ayurveda & Himalayan Healing",
+    image: "/images/gallery/photo-1574862393418-8cb3ddc0004c.jpg",
     duration: "8 Days 7 Nights",
-    locations: ["Srinagar", "Pahalgam", "Sonamarg"],
+    locations: ["Srinagar", "Pahalgam"],
     price: "$2,199",
     highlights: [
-      "Trekking in the Himalayan foothills",
-      "Sunrise at Sonamarg mountains",
-      "Shikara ride on Dal Lake",
-      "Forest meditation experiences",
-      "Alpine meadow picnics"
+      "Personalized Ayurvedic consultations",
+      "Traditional healing treatments",
+      "Daily yoga and pranayama",
+      "Medicinal herb walks",
+      "Balance-focused meditation"
     ],
     inclusions: [
-      "7 Nights at Nature Retreats",
-      "All meals including packed lunches for treks",
-      "Professional trekking guides",
-      "All transportation",
-      "Nature meditation sessions",
-      "Wildlife spotting excursions",
-      "Photography guidance"
+      "7 Nights at Wellness-focused Resorts",
+      "Ayurvedic meals (3 times daily)",
+      "Daily yoga and meditation sessions",
+      "Two personalized Ayurvedic treatments",
+      "Consultation with Ayurvedic doctor",
+      "Herbal tea sessions",
+      "Wellness welcome kit"
     ],
     accommodation: [
       {
         location: "Srinagar",
+        nights: "4 Nights",
+        resort: "Wellness Houseboat"
+      },
+      {
+        location: "Pahalgam",
         nights: "3 Nights",
-        resort: "MAQAM"
+        resort: "Himalayan Healing Center"
+      }
+    ],
+    description: "Rejuvenate your body, mind, and spirit with this 8-day wellness journey combining traditional Ayurvedic practices with the natural healing energies of the Himalayas. This carefully designed program includes personalized wellness consultations, traditional treatments, daily yoga, and meditation in stunning natural settings.",
+    itinerary: [
+      {
+        day: "Day 1",
+        title: "Arrival & Wellness Assessment",
+        activities: [
+          "Welcome and orientation",
+          "Ayurvedic constitution assessment",
+          "Gentle evening yoga session"
+        ]
+      },
+      {
+        day: "Days 2-4",
+        title: "Srinagar Wellness Immersion",
+        activities: [
+          "Daily morning yoga by the lake",
+          "Personalized Ayurvedic treatments",
+          "Evening meditation sessions"
+        ]
+      },
+      {
+        day: "Days 5-7",
+        title: "Mountain Healing in Pahalgam",
+        activities: [
+          "Forest bathing practices",
+          "Himalayan herb walk",
+          "River meditation",
+          "Sound healing session"
+        ]
+      },
+      {
+        day: "Day 8",
+        title: "Integration & Departure",
+        activities: [
+          "Final wellness session",
+          "Personalized wellness plan to take home",
+          "Departure with wellness gift pack"
+        ]
+      }
+    ],
+    category: ["wellness", "yoga", "healing"],
+    featured: false,
+    rating: 4.9,
+    reviewCount: 42
+  },
+  {
+    id: "kashmir-nature-immersion",
+    title: "Kashmir Nature Immersion",
+    subtitle: "Himalayan Wilderness Experience",
+    image: "/images/gallery/photo-1527786356703-4b100091cd2c.jpg",
+    duration: "8 Days 7 Nights",
+    locations: ["Srinagar", "Sonamarg", "Pahalgam"],
+    price: "$2,499",
+    highlights: [
+      "Himalayan forest meditation walks",
+      "Alpine meadow experiences",
+      "Riverside meditation practice",
+      "Mountain sunrise ceremonies",
+      "Nature photography opportunities"
+    ],
+    inclusions: [
+      "7 Nights at Eco-Friendly Resorts",
+      "All meals (often in outdoor settings)",
+      "Guided nature walks",
+      "Forest meditation sessions",
+      "Wildlife spotting excursions",
+      "Outdoor yoga sessions",
+      "Nature journal and field guides"
+    ],
+    accommodation: [
+      {
+        location: "Srinagar",
+        nights: "2 Nights",
+        resort: "Lakeside Eco Lodge"
+      },
+      {
+        location: "Sonamarg",
+        nights: "3 Nights",
+        resort: "Mountain Wilderness Camp"
       },
       {
         location: "Pahalgam",
         nights: "2 Nights",
-        resort: "SOJOURN COTTAGES"
-      },
-      {
-        location: "Sonamarg",
-        nights: "2 Nights",
-        resort: "Mountain Lodge"
+        resort: "Riverside Retreat"
       }
     ],
-    description: "Connect with the breathtaking natural beauty of Kashmir through this 8-day nature expedition. Trek through beautiful valleys, meditate by pristine lakes, witness stunning sunrises over snow-capped peaks, and immerse yourself in the healing power of Kashmir's legendary landscapes.",
+    description: "Experience the profound spiritual beauty of Kashmir's wilderness with this 8-day nature immersion journey. Connect deeply with the Himalayan landscape through forest walks, riverside meditations, mountain ceremonies, and mindful wilderness experiences, all while staying in eco-friendly accommodations integrated with the natural environment.",
     itinerary: [
       {
         day: "Day 1",
@@ -359,7 +469,7 @@ export const packages: Package[] = [
     id: "sufi-mystical-journey",
     title: "Sufi Mystical Journey",
     subtitle: "Following the Path of Saints",
-    image: "https://static.vecteezy.com/system/resources/previews/032/189/944/non_2x/the-stunning-landscapes-in-kashmir-captures-the-serene-beauty-generative-ai-free-photo.jpg",
+    image: "/images/gallery/the-stunning-landscapes-in-kashmir-captures-the-serene-beauty-generative-ai-free-photo.jpg",
     duration: "9 Days 8 Nights",
     locations: ["Srinagar", "Anantnag", "Bijbehara"],
     price: "$2,399",
@@ -368,83 +478,79 @@ export const packages: Package[] = [
       "Exclusive Sufi Music Night",
       "Meeting with Sufi practitioners",
       "Whirling meditation workshop",
-      "Study of Lalleshwari's poetry"
+      "Sacred poetry discussions"
     ],
     inclusions: [
-      "8 Nights at Spiritual Accommodations",
-      "All meals with traditional Sufi influences",
-      "Specialized Sufi guide",
-      "All shrine entrance fees",
-      "Private Sufi music performances",
-      "Poetry and spiritual text study materials",
-      "Transportation to remote shrines"
+      "8 Nights at Heritage Accommodations",
+      "All meals including special Sufi feasts",
+      "Shrine entrance and offering fees",
+      "Private Sufi music performance",
+      "Whirling meditation workshop",
+      "Sacred poetry anthology",
+      "Transportation to all shrines"
     ],
     accommodation: [
       {
         location: "Srinagar",
-        nights: "6 Nights",
-        resort: "MAQAM"
+        nights: "4 Nights",
+        resort: "Heritage Houseboat"
       },
       {
         location: "Anantnag",
         nights: "2 Nights",
-        resort: "Sufi Retreat"
+        resort: "Sufi Retreat Center"
+      },
+      {
+        location: "Bijbehara",
+        nights: "2 Nights",
+        resort: "Historical Heritage Home"
       }
     ],
-    description: "Follow the mystical path of Sufism in Kashmir with this specialized 9-day journey. Visit important Sufi shrines, study the poetic wisdom of saints like Lalleshwari, experience the transcendent power of Sufi music, and learn about the unique blend of Sufi traditions that flourished in Kashmir's sacred valleys.",
+    description: "Journey into the heart of Sufi mysticism in Kashmir with this 9-day pilgrimage to the region's most sacred Sufi shrines and centers. Experience the living traditions of Sufism through music, poetry, meditation practices, and meetings with contemporary practitioners, while exploring the rich spiritual heritage that has shaped Kashmir's unique cultural identity.",
     itinerary: [
       {
         day: "Day 1",
-        title: "Arrival & Sufi Introduction",
+        title: "Arrival & Orientation",
         activities: [
-          "Welcome at Srinagar resort",
-          "Introduction to Kashmir's Sufi heritage",
+          "Welcome ceremony",
+          "Introduction to Sufism in Kashmir",
           "Evening Sufi poetry reading"
         ]
       },
       {
         day: "Days 2-4",
-        title: "Srinagar Sufi Circuit",
+        title: "Srinagar Shrines",
         activities: [
-          "Visit to major Sufi shrines in Srinagar",
-          "Meeting with Sufi practitioners",
-          "Evening zikr ceremony"
-        ]
-      },
-      {
-        day: "Days 5-7",
-        title: "Anantnag & Bijbehara Pilgrimage",
-        activities: [
-          "Visit Lalleshwari's grave at Bijbehara",
-          "Sufi Music Night experience",
+          "Visit to Khanqah-e-Moula shrine",
+          "Dastageer Sahib shrine meditation",
+          "Meeting with Sufi musicians",
           "Whirling meditation workshop"
         ]
       },
       {
-        day: "Days 8-9",
-        title: "Mystical Integration & Departure",
+        day: "Days 5-6",
+        title: "Anantnag Sacred Sites",
         activities: [
-          "Final Sufi wisdom teachings",
-          "Personal reflection ceremony",
-          "Departure with Sufi poetry collection"
+          "Visit to Reshi shrines",
+          "Meetings with local Sufi practitioners",
+          "Evening zikr ceremony",
+          "Sacred poetry discussion"
+        ]
+      },
+      {
+        day: "Days 7-9",
+        title: "Bijbehara & Departure",
+        activities: [
+          "Visit to ancient Sufi center",
+          "Final integration practices",
+          "Farewell Sufi music night",
+          "Return to Srinagar for departure"
         ]
       }
     ],
-    category: ["spiritual", "cultural", "musical"],
+    category: ["spiritual", "culture", "heritage"],
     featured: false,
-    rating: 4.9,
-    reviewCount: 24
+    rating: 4.7,
+    reviewCount: 35
   }
-];
-
-export const packageCategories = [
-  { value: "spiritual", label: "Spiritual" },
-  { value: "cultural", label: "Cultural" },
-  { value: "adventure", label: "Adventure" },
-  { value: "meditation", label: "Meditation" },
-  { value: "wellness", label: "Wellness" },
-  { value: "nature", label: "Nature" },
-  { value: "arts", label: "Arts & Crafts" },
-  { value: "culinary", label: "Culinary" },
-  { value: "musical", label: "Musical" }
 ];
