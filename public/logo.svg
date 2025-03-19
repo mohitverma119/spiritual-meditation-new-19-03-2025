@@ -1,0 +1,62 @@
+<svg width="240" height="60" viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background rounded rectangle -->
+  <rect width="240" height="60" rx="12" fill="none" />
+
+  <!-- "W" Letters for WWW in stylized form -->
+  <g id="letters" fill-rule="evenodd" clip-rule="evenodd">
+    <!-- First W - Gold gradient -->
+    <path d="M30 10L37 47L45 30L53 47L60 10H54L50 33L44 20L38 33L34 10H30Z" fill="url(#goldGradient)" />
+
+    <!-- Second W - Gold to white gradient -->
+    <path d="M65 10L72 47L80 30L88 47L95 10H89L85 33L79 20L73 33L69 10H65Z" fill="url(#goldWhiteGradient)" />
+
+    <!-- Third W - Red gradient -->
+    <path d="M100 10L107 47L115 30L123 47L130 10H124L120 33L114 20L108 33L104 10H100Z" fill="url(#redGradient)" />
+  </g>
+
+  <!-- Meditation figure silhouette -->
+  <g transform="translate(150, 10) scale(0.4)">
+    <path
+      d="M200 30c-10 0-19.3 5.6-23.9 14.5-4.4 8.3-10.6 15.4-18.2 20.7-8.1 5.7-14.1 14.5-16.4 24.4-2.2 9.3-6.7 17.9-13.2 24.8-6.7 7.1-10.5 16.8-10.5 26.7 0 9.3 3.3 18.1 9.2 25 7.3 8.6 12.4 18.9 14.8 30 2.1 9.5 7.9 17.7 16 22.9 6.5 4.1 12 9.7 16.1 16.3 4.6 7.4 12.6 12.2 21.4 12.7 0.9 0.1 1.8 0.1 2.8 0.1 0.9 0 1.8 0 2.8-0.1 8.8-0.5 16.8-5.3 21.4-12.7 4.1-6.6 9.6-12.1 16.1-16.3 8.1-5.1 13.9-13.4 16-22.9 2.4-11.1 7.6-21.4 14.8-30 5.9-6.9 9.2-15.7 9.2-25 0-9.9-3.8-19.5-10.5-26.7-6.5-6.9-10.9-15.4-13.2-24.8-2.3-9.9-8.3-18.7-16.4-24.4-7.6-5.3-13.9-12.5-18.2-20.7-4.5-8.8-13.8-14.5-23.9-14.5z"
+      fill="#000"
+      stroke="#FFC800"
+      stroke-width="2"
+    />
+    <!-- Body lines -->
+    <path
+      d="M195 260v110M205 260v110M175 370h50M140 170c10-10 30-10 40-10 10 0 30 0 40 10M160 150c0-10 10-20 30-20s30 10 30 20M150 190c0 20 20 40 50 40s50-20 50-40M175 310c-30-10-40-90-40-120M225 310c30-10 40-90 40-120"
+      stroke="#FFC800"
+      stroke-width="2"
+      fill="none"
+    />
+  </g>
+
+  <!-- Decorative mountain-like element to represent Kashmir -->
+  <path d="M0 48L20 38L40 45L60 35L80 42L100 32L120 40L140 30L160 40L180 35L200 42L220 35L240 45V60H0V48Z" fill="#090926" fill-opacity="0.3" />
+
+  <!-- Subtle glow effects -->
+  <circle cx="170" cy="25" r="15" fill="url(#glowGradient)" fill-opacity="0.2" />
+
+  <!-- Gradients definitions -->
+  <defs>
+    <linearGradient id="goldGradient" x1="30" y1="10" x2="60" y2="47" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFD700" />
+      <stop offset="1" stop-color="#FFA500" />
+    </linearGradient>
+
+    <linearGradient id="goldWhiteGradient" x1="65" y1="10" x2="95" y2="47" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFD700" />
+      <stop offset="1" stop-color="#FFB533" />
+    </linearGradient>
+
+    <linearGradient id="redGradient" x1="100" y1="10" x2="130" y2="47" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FF5E5E" />
+      <stop offset="1" stop-color="#FF0000" />
+    </linearGradient>
+
+    <radialGradient id="glowGradient" cx="170" cy="25" r="15" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFD700" />
+      <stop offset="1" stop-color="#FFD700" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+</svg>

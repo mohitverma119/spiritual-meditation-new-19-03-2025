@@ -1,0 +1,74 @@
+[
+  {
+    "id": "kashmir-valley",
+    "src": "https://static.vecteezy.com/system/resources/previews/032/190/016/non_2x/the-stunning-landscapes-in-kashmir-captures-the-serene-beauty-generative-ai-free-photo.jpg",
+    "alt": "Kashmir Valley with Pink Flowers and Stream",
+    "category": "landscape"
+  },
+  {
+    "id": "dal-lake-boat",
+    "src": "https://images.unsplash.com/photo-1600254895583-b408f58c8204?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "alt": "Shikara boat on Dal Lake, Kashmir",
+    "category": "culture"
+  },
+  {
+    "id": "sonamarg-mountains",
+    "src": "https://images.unsplash.com/photo-1544033527-b611bb87cf19?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "alt": "Sonamarg Mountains in Summer",
+    "category": "nature"
+  },
+  {
+    "id": "dal-lake-lilies",
+    "src": "https://images.unsplash.com/photo-1574862393418-8cb3ddc0004c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "alt": "Lily pads on Dal Lake",
+    "category": "nature"
+  },
+  {
+    "id": "wooden-bridge",
+    "src": "https://images.unsplash.com/photo-1591099898368-46fa5163c47a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "alt": "Wooden bridge with snow-capped mountains in Srinagar",
+    "category": "culture"
+  },
+  {
+    "id": "pink-flowers",
+    "src": "https://static.vecteezy.com/system/resources/previews/032/189/944/non_2x/the-stunning-landscapes-in-kashmir-captures-the-serene-beauty-generative-ai-free-photo.jpg",
+    "alt": "Pink flowers meadow with mountain backdrop",
+    "category": "spiritual"
+  },
+  {
+    "id": "meditation-lake",
+    "src": "https://images.unsplash.com/photo-1566837486475-98933a0ecdbf?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "alt": "Morning meditation by the lake",
+    "category": "spiritual"
+  },
+  {
+    "id": "mountain-peaks",
+    "src": "https://images.unsplash.com/photo-1527786356703-4b100091cd2c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "alt": "Mountain peaks with snow",
+    "category": "landscape"
+  },
+  {
+    "id": "kashmiri-handicrafts",
+    "src": "https://images.unsplash.com/photo-1583249598754-110018cb6851?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "alt": "Traditional Kashmiri handicrafts",
+    "category": "culture"
+  },
+  {
+    "id": "forest-sunlight",
+    "src": "https://images.unsplash.com/photo-1559628129-67cf63b72248?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "alt": "Dense forest with sunlight streaming through",
+    "category": "nature"
+  },
+  {
+    "id": "dal-lake-sunset",
+    "src": "https://images.unsplash.com/photo-1594750823491-e493d067735a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "alt": "Sunset over Dal Lake",
+    "category": "landscape"
+  },
+  {
+    "id": "kashmiri-cuisine",
+    "src": "https://images.unsplash.com/photo-1606041008023-472dfb5b530f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80",
+    "alt": "Traditional Kashmiri cuisine",
+    "category": "culture"
+  }
+]

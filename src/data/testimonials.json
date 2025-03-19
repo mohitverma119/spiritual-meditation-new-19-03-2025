@@ -1,0 +1,44 @@
+[
+  {
+    "id": "amina",
+    "name": "Amina Khan",
+    "location": "Mumbai, India",
+    "quote": "The Kashmir journey was unlike anything I've experienced before. The combination of breathtaking landscapes and Andrew Harvey's spiritual teachings opened something profound within me that I've been seeking for years.",
+    "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
+  },
+  {
+    "id": "raj",
+    "name": "Raj Patel",
+    "location": "London, UK",
+    "quote": "I've traveled extensively, but Wild World Wanderers created an experience that was truly transformative. The valleys of Kashmir hold an energy that, when experienced with mindful guidance, can change your entire perspective on life.",
+    "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
+  },
+  {
+    "id": "sarah",
+    "name": "Sarah Johnson",
+    "location": "New York, USA",
+    "quote": "The silent meditation retreats by Dal Lake were exactly what my soul needed. There's something magical about the Kashmir landscape that amplifies inner work. I returned home with clarity and purpose I hadn't felt in years.",
+    "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
+  },
+  {
+    "id": "akira",
+    "name": "Akira Tanaka",
+    "location": "Tokyo, Japan",
+    "quote": "As a long-time practitioner of meditation, I was seeking deeper insights. Wild World Wanderers' Kashmir journey provided exactly that - the perfect blend of natural beauty, sacred teachings, and transformative experiences.",
+    "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
+  },
+  {
+    "id": "elena",
+    "name": "Elena Petrova",
+    "location": "Moscow, Russia",
+    "quote": "The guided meditations in the Himalayan foothills were a revelation. I've been meditating for years, but experiencing these practices in such a sacred environment brought a whole new dimension to my spiritual journey.",
+    "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
+  },
+  {
+    "id": "miguel",
+    "name": "Miguel Santos",
+    "location": "Barcelona, Spain",
+    "quote": "I came searching for peace and left with so much more. The Kashmir retreat reconnected me with parts of myself I had forgotten, all while surrounded by some of the most beautiful landscapes I've ever seen.",
+    "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60"
+  }
+]
