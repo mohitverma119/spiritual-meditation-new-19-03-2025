@@ -76,8 +76,8 @@ export default function TestimonialsSection() {
               ))}
             </CarouselContent>
             <div className="flex justify-end gap-2 mt-4">
-              <CarouselPrevious className="relative static left-auto right-auto bg-black/40 border-white/10 text-white hover:bg-gold-500 hover:text-black transform-none translate-y-0" />
-              <CarouselNext className="relative static left-auto right-auto bg-black/40 border-white/10 text-white hover:bg-gold-500 hover:text-black transform-none translate-y-0" />
+              <CarouselPrevious className="relative static left-auto right-auto bg-black/40 border-white/60 text-white hover:bg-gold-600 hover:text-black transform-none translate-y-0" />
+              <CarouselNext className="relative static left-auto right-auto bg-black/40 border-white/60 text-white hover:bg-gold-600 hover:text-black transform-none translate-y-0" />
             </div>
           </Carousel>
         </div>

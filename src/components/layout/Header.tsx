@@ -76,7 +76,7 @@ export default function Header() {
           : "bg-transparent py-3 sm:py-6"
       }`}
       style={{
-        backgroundColor: isScrolled ? 'rgb(0, 0, 0)' : 'transparent',
+        backgroundColor: isScrolled ? 'rgb(30, 30, 30)' : 'transparent',
       }}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">

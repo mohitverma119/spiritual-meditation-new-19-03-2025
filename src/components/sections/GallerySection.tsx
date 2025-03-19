@@ -85,8 +85,8 @@ export default function GallerySection() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="hidden md:flex -left-4 bg-black/40 border-white/10 text-white hover:bg-gold-500 hover:text-black" />
-            <CarouselNext className="hidden md:flex -right-4 bg-black/40 border-white/10 text-white hover:bg-gold-500 hover:text-black" />
+            <CarouselPrevious className="hidden md:flex -left-4 bg-black/40 border-white/40 text-white hover:bg-gold-500 hover:text-black" />
+            <CarouselNext className="hidden md:flex -right-4 bg-black/40 border-white/40 text-white hover:bg-gold-500 hover:text-black" />
           </Carousel>
         </div>
 
