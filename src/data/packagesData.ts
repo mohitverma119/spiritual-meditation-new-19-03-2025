@@ -554,3 +554,14 @@ export const packages: Package[] = [
     reviewCount: 35
   }
 ];
+
+export const packageCategories = [
+  { value: "meditation", label: "Meditation" },
+  { value: "spiritual", label: "Spiritual" },
+  { value: "yoga", label: "Yoga" },
+  { value: "retreat", label: "Retreat" },
+  { value: "adventure", label: "Adventure" },
+  { value: "culture", label: "Culture" },
+  { value: "nature", label: "Nature" },
+  { value: "heritage", label: "Heritage" }
+];
