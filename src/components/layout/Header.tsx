@@ -18,8 +18,14 @@ const navItems = [
 ];
 
 export default function Header() {
+  const [isMounted, setIsMounted] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Handle initial mounting to prevent hydration mismatch
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // Close mobile menu when screen size changes to desktop
   useEffect(() => {
@@ -33,18 +39,23 @@ export default function Header() {
     return () => window.removeEventListener("resize", handleResize);
   }, [isMobileMenuOpen]);
 
+  // Handle scroll events
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > 10) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
       }
     };
 
+    // Add event listener with passive option for better performance
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
     // Initialize scroll state
     handleScroll();
-    window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -68,16 +79,16 @@ export default function Header() {
     };
   }, [isMobileMenuOpen]);
 
+  // Don't render anything until client-side
+  if (!isMounted) {
+    return <header className="fixed top-0 left-0 right-0 h-[70px] sm:h-[80px] z-[100]"></header>;
+  }
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
-        isScrolled
-          ? "bg-black py-2 sm:py-3 shadow-lg"
-          : "bg-transparent py-3 sm:py-6"
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 py-3 sm:py-6 ${
+        isScrolled ? "bg-black shadow-xl" : "bg-transparent"
       }`}
-      style={{
-        backgroundColor: isScrolled ? 'rgb(30, 30, 30)' : 'transparent',
-      }}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 z-20 outline-none focus-visible:ring-2 focus-visible:ring-gold-500 rounded-lg">
@@ -95,7 +106,7 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-4 lg:gap-6">
-          {navItems.map((item, index) => (
+          {navItems.map((item) => (
             <Link
               key={item.name}
               href={item.href}

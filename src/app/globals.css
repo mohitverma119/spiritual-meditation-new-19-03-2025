@@ -161,6 +161,84 @@
     background-image: radial-gradient(circle at 90% 10%, rgba(var(--card-red-start), 0.1), transparent 40%),
                       radial-gradient(circle at 10% 90%, rgba(111, 45, 189, 0.1), transparent 40%);
   }
+
+  /* Flowing gradient animation for hero section */
+  .flowing-gradient {
+    background: linear-gradient(135deg, #000 0%, #11041b 100%);
+    position: relative;
+  }
+
+  .flowing-gradient::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg,
+      rgba(75, 0, 130, 0.05) 0%,
+      rgba(255, 215, 0, 0.05) 50%,
+      rgba(138, 43, 226, 0.05) 100%);
+    filter: blur(80px);
+    transform: translateZ(0);
+    z-index: 0;
+    animation: gradientFlow 15s ease infinite;
+    background-size: 400% 400%;
+  }
+
+  @keyframes gradientFlow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* Dark orbs styling for hero section */
+  .dark-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(50px);
+    opacity: 0.2;
+    animation: orb-float 20s ease-in-out infinite;
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .dark-orb.purple {
+    background: radial-gradient(circle, rgba(128, 0, 128, 0.2) 0%, rgba(75, 0, 130, 0.1) 100%);
+    animation-duration: 25s;
+  }
+
+  .dark-orb.blue {
+    background: radial-gradient(circle, rgba(0, 0, 255, 0.15) 0%, rgba(0, 0, 139, 0.05) 100%);
+    animation-duration: 30s;
+    animation-delay: 3s;
+  }
+
+  .dark-orb.indigo {
+    background: radial-gradient(circle, rgba(75, 0, 130, 0.15) 0%, rgba(138, 43, 226, 0.05) 100%);
+    animation-duration: 27s;
+    animation-delay: 1.5s;
+  }
+
+  @keyframes orb-float {
+    0%, 100% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(5%, 5%);
+    }
+    50% {
+      transform: translate(0, 10%);
+    }
+    75% {
+      transform: translate(-5%, 5%);
+    }
+  }
 }
 
 /* Define min-height for main layout elements */
@@ -186,6 +264,31 @@ html, body {
 main {
   flex: 1 0;
   padding-top: 70px; /* Ensure content doesn't overlap with fixed header */
+}
+
+/* Header specific styles for transparency issue */
+header {
+  will-change: background-color, padding;
+  transition: background-color 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Transparent header at top */
+header:not([class*="bg-black"]) {
+  background-color: transparent !important;
+}
+
+/* Black header when scrolled */
+header[class*="bg-black"] {
+  background-color: #000 !important;
+}
+
+/* Force header box-shadow only when scrolled */
+header:not([class*="shadow"]) {
+  box-shadow: none !important;
+}
+
+header[class*="shadow"] {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4) !important;
 }
 
 /* Better prose styling for blog content */
