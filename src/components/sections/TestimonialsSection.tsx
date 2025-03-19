@@ -24,7 +24,7 @@ export default function TestimonialsSection() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
           <div className="inline-block mb-3 px-3 py-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full">
             <span className="text-white text-sm font-medium">Traveler Stories</span>
           </div>
@@ -39,7 +39,7 @@ export default function TestimonialsSection() {
           </p>
         </div>
 
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto animate-fade-in delay-200">
           <Carousel
             opts={{
               align: "start",
@@ -48,9 +48,9 @@ export default function TestimonialsSection() {
             className="w-full"
           >
             <CarouselContent>
-              {testimonials.map((testimonial) => (
+              {testimonials.map((testimonial, index) => (
                 <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3 pl-4 pr-4">
-                  <div className="h-full bg-black-950/60 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-6 flex flex-col">
+                  <div className="h-full bg-black-950/60 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-6 flex flex-col hover-lift hover-glow transition-all duration-300">
                     <div className="text-3xl text-gold-500 mb-4">❝</div>
                     <p className="text-white text-base mb-6 italic flex-grow">
                       {testimonial.quote}

@@ -6,7 +6,7 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import GallerySection from "@/components/sections/GallerySection";
 import BlogSection from "@/components/sections/BlogSection";
 import ContactSection from "@/components/sections/ContactSection";
-import ItinerarySection from "@/components/sections/ItinerarySection";
+import PackagesSection from "@/components/sections/PackagesSection";
 import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 
@@ -36,9 +36,9 @@ export default function Home() {
           <GallerySection />
         </div>
 
-        {/* Itinerary section */}
-        <div id="itinerary">
-          <ItinerarySection />
+        {/* Packages section */}
+        <div id="packages">
+          <PackagesSection />
         </div>
 
         {/* Blog section */}

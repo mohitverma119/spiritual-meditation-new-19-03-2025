@@ -29,33 +29,33 @@ export default function HeroSection() {
 
       {/* Main content */}
       <div className="container mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative z-10">
-        {/* Left side content */}
-        <div>
+        {/* Left side content with CSS animations */}
+        <div className="animate-fade-in">
           <div className="bg-black-950/30 backdrop-blur-sm p-4 md:p-6 lg:p-8 rounded-xl border border-white/5 shadow-xl">
-            <div className="inline-block mb-3">
+            <div className="inline-block mb-3 animate-fade-in-up delay-100">
               <span className="text-xs sm:text-sm font-medium text-white bg-gradient-to-r from-gold-500/20 to-red-500/20 px-3 py-1 rounded-full">
                 Transformative Journeys
               </span>
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight">
-              <span className="block text-gradient mb-2">
+              <span className="block text-gradient mb-2 animate-fade-in-up delay-200">
                 Discover Your
               </span>
-              <span className="block text-red-500">
+              <span className="block text-red-500 animate-fade-in-up delay-300">
                 Wild Within
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg md:text-xl text-white mb-6 md:mb-8 max-w-lg">
+            <p className="text-base sm:text-lg md:text-xl text-white mb-6 md:mb-8 max-w-lg animate-fade-in-up delay-400">
               In a world of WWW (World Wide Web), we aim to find the WWW (Wild World Wanderers)
               in you. Transformative journeys in the breathtaking beauty of Kashmir.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up delay-500">
               <Button
                 size="lg"
-                className="w-full sm:w-auto bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-black-950 font-medium px-6 sm:px-8 py-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-gold-500/20 hover:shadow-xl"
+                className="w-full sm:w-auto bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-black-950 font-medium px-6 sm:px-8 py-3 rounded-full shadow-lg transition-all duration-300 hover:shadow-gold-500/20 hover:shadow-xl hover-lift"
               >
                 Begin Your Journey
               </Button>
@@ -63,7 +63,7 @@ export default function HeroSection() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="w-full sm:w-auto border-white/30 text-white hover:bg-white/10 hover:text-white rounded-full backdrop-blur-sm transition-all duration-300"
+                  className="w-full sm:w-auto border-white/30 text-white hover:bg-white/10 hover:text-white rounded-full backdrop-blur-sm transition-all duration-300 hover-lift"
                 >
                   Our Vision
                 </Button>
@@ -73,7 +73,7 @@ export default function HeroSection() {
         </div>
 
         {/* Right side - Simple Meditation Image */}
-        <div className="flex justify-center lg:justify-end relative z-10">
+        <div className="flex justify-center lg:justify-end relative z-10 animate-fade-in delay-300">
           <div className="p-4 sm:p-6 md:p-8 flex items-center justify-center relative">
             {/* Soft glow behind the meditation figure */}
             <div className="absolute w-48 h-48 md:w-64 md:h-64 rounded-full bg-gradient-to-br from-gold-500/10 to-purple-500/5 blur-3xl"></div>
@@ -106,7 +106,7 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll indicator - simplified */}
-      <div className="absolute bottom-8 sm:bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center">
+      <div className="absolute bottom-8 sm:bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-fade-in delay-700">
         <p className="text-white mb-2 text-xs sm:text-sm">Scroll to explore</p>
         <div className="w-1 h-10 sm:h-16 relative">
           <div className="absolute inset-0 bg-gradient-to-b from-white to-transparent animate-pulse-slow"></div>

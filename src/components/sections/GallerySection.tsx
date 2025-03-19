@@ -34,7 +34,7 @@ export default function GallerySection() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
           <div className="inline-block mb-3 px-3 py-1 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full">
             <span className="text-white text-sm font-medium">Visual Journey</span>
           </div>
@@ -50,7 +50,7 @@ export default function GallerySection() {
         </div>
 
         {/* Gallery Carousel */}
-        <div className="mb-10">
+        <div className="mb-10 animate-fade-in delay-200">
           <Carousel
             opts={{
               align: "start",
@@ -62,7 +62,8 @@ export default function GallerySection() {
               {galleryImages.map((image, index) => (
                 <CarouselItem key={image.id} className="md:basis-1/2 lg:basis-1/3">
                   <div
-                    className="relative group card-glow-hover cursor-pointer h-full"
+                    className="relative group card-glow-hover cursor-pointer h-full animate-fade-in-up"
+                    style={{ animationDelay: `${0.1 + index * 0.1}s` }}
                     onClick={() => setSelectedImage(image)}
                   >
                     <div className="aspect-[4/3] overflow-hidden rounded-lg border border-white/10 h-full">
@@ -90,11 +91,11 @@ export default function GallerySection() {
         </div>
 
         {/* View More Button */}
-        <div className="flex justify-center mt-8">
+        <div className="flex justify-center mt-8 animate-fade-in delay-400">
           <Link href="/gallery">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-black-950 font-medium px-8 rounded-full shadow-lg transition-all duration-300 hover:shadow-gold-500/20 hover:shadow-xl"
+              className="bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-black-950 font-medium px-8 rounded-full shadow-lg transition-all duration-300 hover:shadow-gold-500/20 hover:shadow-xl hover-lift"
             >
               View Full Gallery
             </Button>
@@ -104,11 +105,11 @@ export default function GallerySection() {
         {/* Lightbox - simplified - no animation */}
         {selectedImage && (
           <div
-            className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fade-in"
             onClick={() => setSelectedImage(null)}
           >
             <div
-              className="relative max-w-5xl max-h-[90vh] w-full"
+              className="relative max-w-5xl max-h-[90vh] w-full animate-fade-in-up"
               onClick={(e) => e.stopPropagation()}
             >
               <button

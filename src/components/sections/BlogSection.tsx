@@ -21,7 +21,7 @@ export default function BlogSection() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
           <div className="inline-block mb-3 px-3 py-1 bg-gradient-to-r from-red-500/20 to-purple-500/20 rounded-full">
             <span className="text-white text-sm font-medium">Our Stories</span>
           </div>
@@ -35,11 +35,12 @@ export default function BlogSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in delay-200">
           {blogPosts.map((post, index) => (
             <div
               key={post.id}
-              className="bg-black-950/60 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden transition-all duration-300 hover:border-white/20"
+              className="bg-black-950/60 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden transition-all duration-300 hover:border-white/20 hover-lift hover-glow animate-fade-in-up"
+              style={{ animationDelay: `${0.3 + index * 0.1}s` }}
             >
               <div className="relative h-48 overflow-hidden">
                 <Image
@@ -77,11 +78,11 @@ export default function BlogSection() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-12 animate-fade-in delay-500">
           <Link href="/blog">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-black-950 font-medium px-8 rounded-full shadow-lg transition-all duration-300 hover:shadow-gold-500/20 hover:shadow-xl"
+              className="bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-black-950 font-medium px-8 rounded-full shadow-lg transition-all duration-300 hover:shadow-gold-500/20 hover:shadow-xl hover-lift"
             >
               View All Articles
             </Button>

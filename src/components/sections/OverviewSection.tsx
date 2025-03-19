@@ -55,7 +55,7 @@ export default function OverviewSection() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-12 bg-black-950/50 backdrop-blur-sm p-6 md:p-8 rounded-xl border border-white/5">
+        <div className="text-center max-w-3xl mx-auto mb-12 bg-black-950/50 backdrop-blur-sm p-6 md:p-8 rounded-xl border border-white/5 animate-fade-in">
           <div className="inline-block mb-3 px-3 py-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full">
             <span className="text-white text-sm font-medium">Our Vision</span>
           </div>
@@ -73,8 +73,11 @@ export default function OverviewSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {benefits.map((benefit, index) => (
-            <div key={benefit.title}>
-              <Card className={`animated-card-bg ${index % 3 === 0 ? 'card-variant-1' : index % 3 === 1 ? 'card-variant-2' : 'card-variant-3'} bg-black-950/60 backdrop-blur-sm border-white/10 hover:border-white/30 transition-all duration-300 h-full overflow-hidden group`}>
+            <div
+              key={benefit.title}
+              className={`animate-fade-in-up delay-${Math.min(5, index + 1)}00`}
+            >
+              <Card className={`bg-black-950/60 backdrop-blur-sm border-white/10 hover:border-white/30 transition-all duration-300 h-full overflow-hidden group hover-lift hover-glow`}>
                 <CardContent className="p-6 relative z-10">
                   <div className="mb-5 w-12 h-12 rounded-full bg-gradient-to-br from-gold-500/30 to-red-500/30 flex items-center justify-center text-white">
                     <benefit.icon className="w-6 h-6" />

@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
-import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -19,19 +18,6 @@ export default function BlogPage() {
   const [activeCategory, setActiveCategory] = useState<string>("All");
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const shouldReduceMotion = useReducedMotion();
-
-  const fadeIn = shouldReduceMotion ? {} : {
-    initial: { opacity: 0 },
-    animate: { opacity: 1 },
-    transition: { duration: 0.4 }
-  };
-
-  const fadeInUp = shouldReduceMotion ? {} : {
-    initial: { opacity: 0, y: 10 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.4 }
-  };
 
   // Filter posts based on category and search term
   const filteredPosts = useMemo(() => {
@@ -69,7 +55,7 @@ export default function BlogPage() {
     <div className="min-h-screen flex flex-col bg-black-950">
       <Header />
 
-      <main className="flex-grow">
+      <div className="flex-grow flex flex-col">
         <section className="py-16 md:py-20 relative overflow-hidden bg-meditation cosmic-bg">
           {/* Background gradients - simplified */}
           <div className="absolute inset-0 z-0">
@@ -79,10 +65,7 @@ export default function BlogPage() {
           </div>
 
           <div className="container mx-auto px-4 relative z-10 pt-16">
-            <motion.div
-              {...fadeInUp}
-              className="text-center max-w-3xl mx-auto mb-12"
-            >
+            <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
               <div className="inline-block mb-3 px-3 py-1 bg-gradient-to-r from-red-500/20 to-purple-500/20 rounded-full">
                 <span className="text-white text-sm font-medium">Blog & Insights</span>
               </div>
@@ -94,26 +77,19 @@ export default function BlogPage() {
                 Explore our collection of articles on spiritual practices, meditation techniques,
                 and transformative journeys in the sacred lands of Kashmir.
               </p>
-            </motion.div>
+            </div>
 
             {/* Back to Home Button */}
-            <motion.div
-              {...fadeIn}
-              className="mb-8 flex justify-center"
-            >
+            <div className="mb-8 flex justify-center animate-fade-in delay-100">
               <Link href="/#blog">
                 <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 hover:text-white rounded-full">
                   ← Back to Home
                 </Button>
               </Link>
-            </motion.div>
+            </div>
 
             {/* Search and Filter Controls */}
-            <motion.div
-              {...fadeIn}
-              transition={{ duration: 0.4, delay: 0.1 }}
-              className="mb-8"
-            >
+            <div className="mb-8 animate-fade-in delay-200">
               <div className="flex flex-col md:flex-row gap-4 justify-between mb-6">
                 {/* Search Input */}
                 <div className="relative w-full md:w-1/3">
@@ -157,23 +133,16 @@ export default function BlogPage() {
                   ))}
                 </div>
               </div>
-            </motion.div>
+            </div>
 
             {/* Blog Posts Grid */}
-            <motion.div
-              {...fadeIn}
-              transition={{ duration: 0.4, delay: 0.2 }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-            >
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in delay-300"
+                style={{ minHeight: "400px", display: "grid" }}>
               {paginatedPosts.map((post, index) => (
-                <motion.div
+                <div
                   key={post.id}
-                  {...fadeInUp}
-                  transition={{
-                    duration: 0.4,
-                    delay: Math.min(0.1 + index * 0.05, 0.4)
-                  }}
-                  className="bg-black-950/60 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden transition-all duration-300 hover:border-gold-500/20 hover:shadow-lg card-glow-hover"
+                  className="bg-black-950/60 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden transition-all duration-300 hover:border-gold-500/20 hover:shadow-lg card-glow-hover animate-fade-in-up"
+                  style={{ animationDelay: `${0.3 + index * 0.05}s` }}
                 >
                   <div className="relative h-48 overflow-hidden">
                     <Image
@@ -211,17 +180,13 @@ export default function BlogPage() {
                       </Link>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               ))}
-            </motion.div>
+            </div>
 
             {/* Pagination Controls */}
             {totalPages > 1 && (
-              <motion.div
-                {...fadeIn}
-                transition={{ duration: 0.4, delay: 0.3 }}
-                className="flex justify-center mt-12 items-center gap-2"
-              >
+              <div className="flex justify-center mt-12 items-center gap-2 animate-fade-in delay-400">
                 <Button
                   variant="outline"
                   size="icon"
@@ -262,15 +227,12 @@ export default function BlogPage() {
                     <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                   </svg>
                 </Button>
-              </motion.div>
+              </div>
             )}
 
             {/* Empty state when no posts match filter */}
             {filteredPosts.length === 0 && (
-              <motion.div
-                {...fadeIn}
-                className="text-center py-16 bg-black-950/60 backdrop-blur-sm border border-white/10 rounded-xl"
-              >
+              <div className="text-center py-16 bg-black-950/60 backdrop-blur-sm border border-white/10 rounded-xl animate-fade-in delay-400">
                 <h3 className="text-white text-xl font-semibold mb-3">No articles found</h3>
                 <p className="text-white/70 mb-6">
                   {searchTerm
@@ -286,21 +248,18 @@ export default function BlogPage() {
                 >
                   Reset Filters
                 </Button>
-              </motion.div>
+              </div>
             )}
 
             {/* Results count */}
             {filteredPosts.length > 0 && (
-              <motion.div
-                {...fadeIn}
-                className="text-center text-white/60 mt-6"
-              >
+              <div className="text-center text-white/60 mt-6 animate-fade-in delay-500">
                 Showing {paginatedPosts.length} of {filteredPosts.length} articles
-              </motion.div>
+              </div>
             )}
           </div>
         </section>
-      </main>
+      </div>
 
       <Footer />
     </div>

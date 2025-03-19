@@ -262,219 +262,107 @@
     }
   }
 
-  /* Dark orbs that float in the background */
+  /* Dark orb styles for hero section */
   .dark-orb {
     position: absolute;
     border-radius: 50%;
-    filter: blur(40px);
-    opacity: 0.4;
-    z-index: 1;
+    filter: blur(70px);
+    opacity: 0.3;
+    transform-origin: center;
+    animation: pulse-slow 15s ease-in-out infinite;
   }
 
   .dark-orb.purple {
-    background: radial-gradient(circle at center, rgba(76, 29, 149, 0.3) 0%, rgba(30, 27, 75, 0.1) 70%);
-    animation: orb-float-1 20s ease-in-out infinite;
+    background: radial-gradient(circle at 30% 30%, rgba(147, 51, 234, 0.4), rgba(76, 29, 149, 0.1));
+    animation-delay: 0s;
   }
 
   .dark-orb.blue {
-    background: radial-gradient(circle at center, rgba(30, 58, 138, 0.3) 0%, rgba(15, 23, 42,.1) 70%);
-    animation: orb-float-2 25s ease-in-out infinite;
+    background: radial-gradient(circle at 70% 70%, rgba(59, 130, 246, 0.3), rgba(37, 99, 235, 0.1));
+    animation-delay: -5s;
   }
 
   .dark-orb.indigo {
-    background: radial-gradient(circle at center, rgba(49, 46, 129, 0.3) 0%, rgba(17, 24, 39, 0.1) 70%);
-    animation: orb-float-3 30s ease-in-out infinite;
+    background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.3), rgba(67, 56, 202, 0.1));
+    animation-delay: -10s;
   }
 
-  @keyframes orb-float-1 {
-    0%, 100% { transform: translate(0, 0); }
-    25% { transform: translate(5%, 5%); }
-    50% { transform: translate(2%, 10%); }
-    75% { transform: translate(8%, 2%); }
-  }
-
-  @keyframes orb-float-2 {
-    0%, 100% { transform: translate(0, 0); }
-    25% { transform: translate(-5%, 7%); }
-    50% { transform: translate(-8%, 3%); }
-    75% { transform: translate(-2%, 9%); }
-  }
-
-  @keyframes orb-float-3 {
-    0%, 100% { transform: translate(0, 0); }
-    25% { transform: translate(7%, -4%); }
-    50% { transform: translate(3%, -8%); }
-    75% { transform: translate(9%, -2%); }
-  }
-
-  /* Card gradient animations for overview section */
-  .animated-card-bg {
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-  }
-
-  .animated-card-bg::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-      125deg,
-      rgba(var(--card-gold-start), 0.15) 0%,
-      rgba(var(--card-red-start), 0.1) 25%,
-      rgba(var(--card-dark-start), 0.15) 50%,
-      rgba(var(--card-red-start), 0.1) 75%,
-      rgba(var(--card-gold-start), 0.15) 100%
-    );
-    background-size: 400% 400%;
-    animation: cardGradient 15s ease infinite;
-    z-index: -1;
-    opacity: 0.9;
-    transition: all 0.5s ease;
-  }
-
-  .animated-card-bg:hover::before {
-    opacity: 1;
-    background: linear-gradient(
-      125deg,
-      rgba(var(--card-gold-start), 0.25) 0%,
-      rgba(var(--card-red-start), 0.2) 25%,
-      rgba(var(--card-dark-start), 0.2) 50%,
-      rgba(var(--card-red-start), 0.2) 75%,
-      rgba(var(--card-gold-start), 0.25) 100%
-    );
-    animation: cardGradient 8s ease infinite;
-  }
-
-  .animated-card-bg::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(
-      circle at bottom right,
-      rgba(var(--card-gold-start), 0.15) 0%,
-      transparent 70%
-    );
-    opacity: 0;
-    transition: all 0.5s ease;
-    z-index: -1;
-  }
-
-  .animated-card-bg:hover::after {
-    opacity: 1;
-  }
-
-  @keyframes cardGradient {
-    0% {
-      background-position: 0% 50%;
+  /* Additional CSS animations */
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 0.2;
+      transform: scale(1);
     }
     50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-  /* Card variant classes */
-  .card-variant-1::before {
-    background: linear-gradient(
-      125deg,
-      rgba(var(--card-gold-start), 0.18) 0%,
-      rgba(var(--card-red-start), 0.08) 50%,
-      rgba(var(--card-gold-start), 0.18) 100%
-    );
-  }
-
-  .card-variant-1:hover::before {
-    background: linear-gradient(
-      125deg,
-      rgba(var(--card-gold-start), 0.28) 0%,
-      rgba(var(--card-red-start), 0.18) 50%,
-      rgba(var(--card-gold-start), 0.28) 100%
-    );
-  }
-
-  .card-variant-2::before {
-    background: linear-gradient(
-      125deg,
-      rgba(var(--card-red-start), 0.15) 0%,
-      rgba(var(--card-gold-start), 0.15) 50%,
-      rgba(var(--card-red-start), 0.15) 100%
-    );
-  }
-
-  .card-variant-2:hover::before {
-    background: linear-gradient(
-      125deg,
-      rgba(var(--card-red-start), 0.25) 0%,
-      rgba(var(--card-gold-start), 0.25) 50%,
-      rgba(var(--card-red-start), 0.25) 100%
-    );
-  }
-
-  .card-variant-3::before {
-    background: linear-gradient(
-      125deg,
-      rgba(var(--card-dark-start), 0.15) 0%,
-      rgba(var(--card-gold-start), 0.12) 50%,
-      rgba(var(--card-dark-start), 0.15) 100%
-    );
-  }
-
-  .card-variant-3:hover::before {
-    background: linear-gradient(
-      125deg,
-      rgba(var(--card-dark-start), 0.2) 0%,
-      rgba(var(--card-gold-start), 0.22) 50%,
-      rgba(var(--card-dark-start), 0.2) 100%
-    );
-  }
-
-  .border-glow {
-    @apply border border-gold-500/50 shadow-[0_0_15px_rgba(255,181,51,0.5)];
-  }
-
-  /* Optimize animation */
-  .animate-pulse-slow {
-    animation: pulse 8s ease-in-out infinite;
-  }
-
-  @keyframes pulse {
-    0%, 100% {
       opacity: 0.4;
-    }
-    50% {
-      opacity: 0.7;
+      transform: scale(1.05);
     }
   }
 
-  .animate-float {
-    animation: float 10s ease-in-out infinite;
-  }
-
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
     }
-    50% {
-      transform: translateY(-15px);
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 
-  .text-shadow {
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
-  .white-text {
-    @apply text-white text-shadow;
-    color: white !important;
+  /* CSS-only animation utility classes */
+  .animate-fade-in {
+    animation: fade-in 1s ease forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 1s ease forwards;
+  }
+
+  .delay-100 {
+    animation-delay: 0.1s;
+  }
+
+  .delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .delay-300 {
+    animation-delay: 0.3s;
+  }
+
+  .delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  .delay-500 {
+    animation-delay: 0.5s;
+  }
+
+  /* Enhanced hover effects */
+  .hover-lift {
+    transition: transform 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-5px);
+  }
+
+  .hover-glow {
+    transition: box-shadow 0.3s ease;
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 20px rgba(255, 181, 51, 0.3);
   }
 
   .text-gradient {

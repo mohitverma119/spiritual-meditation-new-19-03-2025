@@ -45,7 +45,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-black-950 relative overflow-hidden cosmic-bg">
+    <footer className="bg-black-950 relative overflow-hidden cosmic-bg mt-auto">
       {/* Background gradient elements */}
       <div className="absolute inset-0 z-0">
         <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-black-950 to-transparent" />

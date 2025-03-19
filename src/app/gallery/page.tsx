@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
-import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -19,19 +18,6 @@ export default function GalleryPage() {
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [selectedImage, setSelectedImage] = useState<typeof galleryImages[0] | null>(null);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const shouldReduceMotion = useReducedMotion();
-
-  const fadeIn = shouldReduceMotion ? {} : {
-    initial: { opacity: 0 },
-    animate: { opacity: 1 },
-    transition: { duration: 0.4 }
-  };
-
-  const fadeInUp = shouldReduceMotion ? {} : {
-    initial: { opacity: 0, y: 10 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.4 }
-  };
 
   // Filter images based on selected category
   const filteredImages = useMemo(() => {
@@ -63,7 +49,7 @@ export default function GalleryPage() {
     <div className="min-h-screen flex flex-col bg-black-950">
       <Header />
 
-      <main className="flex-grow">
+      <div className="flex-grow flex flex-col">
         <section className="py-16 md:py-20 relative overflow-hidden bg-meditation cosmic-bg">
           {/* Background gradients - simplified */}
           <div className="absolute inset-0 z-0">
@@ -73,10 +59,7 @@ export default function GalleryPage() {
           </div>
 
           <div className="container mx-auto px-4 relative z-10 pt-16">
-            <motion.div
-              {...fadeInUp}
-              className="text-center max-w-3xl mx-auto mb-12"
-            >
+            <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
               <div className="inline-block mb-3 px-3 py-1 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-full">
                 <span className="text-white text-sm font-medium">Complete Collection</span>
               </div>
@@ -88,26 +71,19 @@ export default function GalleryPage() {
                 Explore our complete collection of breathtaking images from Kashmir.
                 Filter by category to find the perfect inspiration for your meditation journey.
               </p>
-            </motion.div>
+            </div>
 
             {/* Back to Home Button */}
-            <motion.div
-              {...fadeIn}
-              className="mb-8 flex justify-center"
-            >
+            <div className="mb-8 flex justify-center animate-fade-in delay-100">
               <Link href="/#gallery">
                 <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 hover:text-white rounded-full">
                   ← Back to Home
                 </Button>
               </Link>
-            </motion.div>
+            </div>
 
             {/* Category Filters */}
-            <motion.div
-              {...fadeIn}
-              transition={{ duration: 0.4, delay: 0.1 }}
-              className="flex flex-wrap justify-center gap-3 mb-8"
-            >
+            <div className="flex flex-wrap justify-center gap-3 mb-8 animate-fade-in delay-200">
               {categories.map((category) => (
                 <button
                   key={category}
@@ -121,23 +97,16 @@ export default function GalleryPage() {
                   {category.charAt(0).toUpperCase() + category.slice(1)}
                 </button>
               ))}
-            </motion.div>
+            </div>
 
-            {/* Gallery Grid - optimized with simpler animations */}
-            <motion.div
-              {...fadeIn}
-              transition={{ duration: 0.4, delay: 0.2 }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
-            >
+            {/* Gallery Grid - CSS animations instead of framer-motion */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 animate-fade-in delay-300"
+                style={{ minHeight: "400px", display: "grid" }}>
               {paginatedImages.map((image, index) => (
-                <motion.div
+                <div
                   key={image.id}
-                  {...fadeInUp}
-                  transition={{
-                    duration: 0.4,
-                    delay: Math.min(0.1 + index * 0.05, 0.4) // Reduced max delay
-                  }}
-                  className="relative group card-glow-hover cursor-pointer"
+                  className="relative group card-glow-hover cursor-pointer animate-fade-in-up"
+                  style={{ animationDelay: `${0.3 + index * 0.05}s` }}
                   onClick={() => setSelectedImage(image)}
                 >
                   <div className="aspect-[4/3] overflow-hidden rounded-lg border border-white/10">
@@ -156,17 +125,13 @@ export default function GalleryPage() {
                       <span className="text-white/80 text-sm text-shadow">{image.category}</span>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               ))}
-            </motion.div>
+            </div>
 
             {/* Pagination Controls */}
             {totalPages > 1 && (
-              <motion.div
-                {...fadeIn}
-                transition={{ duration: 0.4, delay: 0.3 }}
-                className="flex justify-center mt-12 items-center gap-2"
-              >
+              <div className="flex justify-center mt-12 items-center gap-2 animate-fade-in delay-400">
                 <Button
                   variant="outline"
                   size="icon"
@@ -207,33 +172,24 @@ export default function GalleryPage() {
                     <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                   </svg>
                 </Button>
-              </motion.div>
+              </div>
             )}
 
             {/* Results count */}
             {filteredImages.length > 0 && (
-              <motion.div
-                {...fadeIn}
-                className="text-center text-white/60 mt-6"
-              >
+              <div className="text-center text-white/60 mt-6 animate-fade-in delay-500">
                 Showing {paginatedImages.length} of {filteredImages.length} images
-              </motion.div>
+              </div>
             )}
 
-            {/* Lightbox - simplified animation */}
+            {/* Lightbox - simpler implementation without animations */}
             {selectedImage && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.3 }}
-                className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+              <div
+                className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fade-in"
                 onClick={() => setSelectedImage(null)}
               >
-                <motion.div
-                  initial={shouldReduceMotion ? {} : { scale: 0.95 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 0.3 }}
-                  className="relative max-w-5xl max-h-[90vh] w-full"
+                <div
+                  className="relative max-w-5xl max-h-[90vh] w-full animate-fade-in-up"
                   onClick={(e) => e.stopPropagation()}
                 >
                   <button
@@ -257,12 +213,12 @@ export default function GalleryPage() {
                       <p className="text-white/80">{selectedImage.category}</p>
                     </div>
                   </div>
-                </motion.div>
-              </motion.div>
+                </div>
+              </div>
             )}
           </div>
         </section>
-      </main>
+      </div>
 
       <Footer />
     </div>
