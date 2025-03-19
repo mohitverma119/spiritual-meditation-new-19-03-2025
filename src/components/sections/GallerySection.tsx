@@ -28,8 +28,8 @@ export default function GallerySection() {
     <section id="gallery" className="py-16 md:py-20 relative overflow-hidden bg-meditation cosmic-bg">
       {/* Background gradients - simplified */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-black-700 to-transparent" />
-        <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-black-700 to-transparent" />
+        <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-black-600 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-black-900 to-transparent" />
         <div className="absolute top-1/3 left-1/4 w-64 h-64 rounded-full bg-blue-500/5 blur-3xl animate-pulse-slow" />
       </div>
 
@@ -60,7 +60,7 @@ export default function GallerySection() {
           >
             <CarouselContent>
               {galleryImages.map((image, index) => (
-                <CarouselItem key={image.id} className="md:basis-1/2 lg:basis-1/3">
+                <CarouselItem key={image.id} className="md:basis-1/3 lg:basis-1/4">
                   <div
                     className="relative group card-glow-hover cursor-pointer h-full animate-fade-in-up"
                     style={{ animationDelay: `${0.1 + index * 0.1}s` }}
@@ -97,7 +97,7 @@ export default function GallerySection() {
               size="lg"
               className="bg-gradient-to-r from-gold-500 to-gold-600 hover:from-gold-600 hover:to-gold-700 text-black-950 font-medium px-8 rounded-full shadow-lg transition-all duration-300 hover:shadow-gold-500/20 hover:shadow-xl hover-lift"
             >
-              View Full Gallery
+              View More Images
             </Button>
           </Link>
         </div>

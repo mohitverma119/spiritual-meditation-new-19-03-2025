@@ -77,7 +77,7 @@ export default function OverviewSection() {
               key={benefit.title}
               className={`animate-fade-in-up delay-${Math.min(5, index + 1)}00`}
             >
-              <Card className={`bg-black-950/60 backdrop-blur-sm border-white/10 hover:border-white/30 transition-all duration-300 h-full overflow-hidden group hover-lift hover-glow`}>
+              <Card className={`bg-gradient-to-br from-gold-800/30 to-black-900/30  backdrop-blur-sm border-white/10 hover:border-white/30 transition-all duration-300 h-full overflow-hidden group hover-lift hover-glow`}>
                 <CardContent className="p-6 relative z-10">
                   <div className="mb-5 w-12 h-12 rounded-full bg-gradient-to-br from-gold-500/30 to-red-500/30 flex items-center justify-center text-white">
                     <benefit.icon className="w-6 h-6" />

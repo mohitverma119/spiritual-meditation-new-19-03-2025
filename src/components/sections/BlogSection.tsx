@@ -16,7 +16,7 @@ export default function BlogSection() {
     >
       {/* Background gradients - simplified */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-black-950 to-transparent" />
+        <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-black-600 to-transparent" />
         <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-black-950 to-transparent" />
       </div>
 
@@ -39,7 +39,7 @@ export default function BlogSection() {
           {blogPosts.map((post, index) => (
             <div
               key={post.id}
-              className="bg-black-950/60 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden transition-all duration-300 hover:border-white/20 hover-lift hover-glow animate-fade-in-up"
+              className="bg-black-700/60 backdrop-blur-sm border border-white/10 rounded-xl overflow-hidden transition-all duration-300 hover:border-white/20 hover-lift hover-glow animate-fade-in-up"
               style={{ animationDelay: `${0.3 + index * 0.1}s` }}
             >
               <div className="relative h-48 overflow-hidden">

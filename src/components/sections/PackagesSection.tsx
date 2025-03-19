@@ -15,8 +15,8 @@ export default function PackagesSection() {
     <section id="packages" className="py-16 md:py-20 bg-black-950 relative overflow-hidden cosmic-bg">
       {/* Background elements */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-black-950 to-transparent" />
-        <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-black-950 to-transparent" />
+        <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-black-600 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-black-900 to-transparent" />
         <div className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-red-500/5 blur-3xl animate-pulse-slow" />
       </div>
 
@@ -40,7 +40,7 @@ export default function PackagesSection() {
           {featuredPackages.map((pkg, index) => (
             <div
               key={pkg.id}
-              className="bg-black-900/40 backdrop-blur-sm border border-white/10 hover:border-gold-500/20 rounded-xl overflow-hidden transition-all duration-300 animate-fade-in-up hover-lift hover-glow"
+              className="bg-black-600/40 backdrop-blur-sm border border-white/10 hover:border-gold-500/20 rounded-xl overflow-hidden transition-all duration-300 animate-fade-in-up hover-lift hover-glow"
               style={{ animationDelay: `${0.2 + index * 0.1}s` }}
             >
               {/* Package Image */}

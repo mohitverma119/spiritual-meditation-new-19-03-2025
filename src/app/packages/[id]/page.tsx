@@ -48,7 +48,16 @@ export default function PackageDetailPage() {
               priority
               crossOrigin="anonymous"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent" />
+            <div
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                background: 'rgba(0, 0, 0, 0.5)', // Solid black with 50% opacity
+              }}
+            />
           </div>
 
           <div className="container mx-auto px-4 relative h-full flex flex-col justify-end py-12 z-10">
@@ -96,7 +105,7 @@ export default function PackageDetailPage() {
               {/* Main Content */}
               <div className="lg:w-2/3">
                 {/* Overview */}
-                <div className="bg-black-900/40 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/10 mb-8 animate-fade-in">
+                <div className="bg-black-400/40 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/10 mb-8 animate-fade-in">
                   <h2 className="text-2xl font-semibold text-white mb-6">Overview</h2>
                   <p className="text-white/80 leading-relaxed mb-8">
                     {pkg.description}
@@ -124,7 +133,7 @@ export default function PackageDetailPage() {
                 </div>
 
                 {/* Highlights */}
-                <div className="bg-black-900/40 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/10 mb-8 animate-fade-in delay-100">
+                <div className="bg-black-400/40 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/10 mb-8 animate-fade-in delay-100">
                   <h2 className="text-2xl font-semibold text-white mb-6">Highlights</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {pkg.highlights.map((highlight, index) => (
@@ -139,7 +148,7 @@ export default function PackageDetailPage() {
                 </div>
 
                 {/* Itinerary */}
-                <div className="bg-black-900/40 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/10 mb-8 animate-fade-in delay-200">
+                <div className="bg-black-400/40 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/10 mb-8 animate-fade-in delay-200">
                   <h2 className="text-2xl font-semibold text-white mb-6">Itinerary</h2>
                   <div className="space-y-6">
                     {pkg.itinerary.map((day, index) => (
@@ -165,7 +174,7 @@ export default function PackageDetailPage() {
                 </div>
 
                 {/* Accommodation */}
-                <div className="bg-black-900/40 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/10 mb-8 animate-fade-in delay-300">
+                <div className="bg-black-400/40 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/10 mb-8 animate-fade-in delay-300">
                   <h2 className="text-2xl font-semibold text-white mb-6">Accommodation</h2>
                   <div className="space-y-4">
                     {pkg.accommodation.map((acc, index) => (
@@ -184,7 +193,7 @@ export default function PackageDetailPage() {
                 </div>
 
                 {/* Inclusions */}
-                <div className="bg-black-900/40 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/10 animate-fade-in delay-400">
+                <div className="bg-black-400/40 backdrop-blur-sm rounded-xl p-6 md:p-8 border border-white/10 animate-fade-in delay-400">
                   <h2 className="text-2xl font-semibold text-white mb-6">What's Included</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {pkg.inclusions.map((inclusion, index) => (
@@ -200,7 +209,7 @@ export default function PackageDetailPage() {
               {/* Sidebar */}
               <div className="lg:w-1/3">
                 {/* Pricing and Booking */}
-                <div className="bg-black-900/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 lg:sticky lg:top-24 animate-fade-in">
+                <div className="bg-black-600/40 backdrop-blur-sm rounded-xl p-6 border border-white/10 lg:sticky lg:top-24 animate-fade-in">
                   <div className="flex justify-between items-start mb-6">
                     <div>
                       <span className="text-white/60 text-sm">Starting from</span>
@@ -264,7 +273,7 @@ export default function PackageDetailPage() {
                   {relatedPackages.map((relatedPkg, index) => (
                     <div
                       key={relatedPkg.id}
-                      className="bg-black-900/40 backdrop-blur-sm border border-white/10 hover:border-gold-500/20 rounded-xl overflow-hidden transition-all duration-300 animate-fade-in-up hover-lift hover-glow"
+                      className="bg-black-600/40 backdrop-blur-sm border border-white/10 hover:border-gold-500/20 rounded-xl overflow-hidden transition-all duration-300 animate-fade-in-up hover-lift hover-glow"
                       style={{ animationDelay: `${0.1 + index * 0.1}s` }}
                     >
                       {/* Package Image */}
@@ -303,7 +312,7 @@ export default function PackageDetailPage() {
                           <Link href={`/packages/${relatedPkg.id}`}>
                             <Button
                               variant="outline"
-                              className="text-gold-500 border-gold-500/50 hover:bg-gold-500/10"
+                              className="text-gold-500 border-gold-500/50 hover:bg-gold-500/10 hover:text-gold-400"
                             >
                               View Details
                             </Button>

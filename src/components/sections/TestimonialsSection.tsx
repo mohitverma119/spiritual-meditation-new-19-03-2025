@@ -20,7 +20,7 @@ export default function TestimonialsSection() {
       {/* Simple background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-black-600 to-transparent" />
-        <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-black-600 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-black-900 to-transparent" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -50,7 +50,7 @@ export default function TestimonialsSection() {
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3 pl-4 pr-4">
-                  <div className="h-full bg-black-950/60 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-6 flex flex-col hover-lift hover-glow transition-all duration-300">
+                  <div className="h-full bg-black-700/60 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-6 flex flex-col hover-lift hover-glow transition-all duration-300">
                     <div className="text-3xl text-gold-500 mb-4">❝</div>
                     <p className="text-white text-base mb-6 italic flex-grow">
                       {testimonial.quote}
