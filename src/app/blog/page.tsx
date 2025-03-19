@@ -12,7 +12,7 @@ import blogPosts from "@/data/blogPosts.json";
 const categories = ["All", ...Array.from(new Set(blogPosts.map((post) => post.category)))];
 
 // Number of posts per page
-const POSTS_PER_PAGE = 9;
+const POSTS_PER_PAGE = 6;
 
 export default function BlogPage() {
   const [activeCategory, setActiveCategory] = useState<string>("All");
