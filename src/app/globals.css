@@ -20,16 +20,16 @@
     --secondary-foreground: 45 100% 96%;
 
     --muted: 0 0% 15%;
-    --muted-foreground: 45 20% 70%;
+    --muted-foreground: 0 0% 60%;
 
-    --accent: 0 73% 31%;
-    --accent-foreground: 45 100% 96%;
+    --accent: 12 76% 61%;
+    --accent-foreground: 0 0% 3%;
 
-    --destructive: 0 100% 50%;
-    --destructive-foreground: 45 100% 96%;
+    --destructive: 0 100% 40%;
+    --destructive-foreground: 45 100% 60%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
     --ring: 45 100% 60%;
 
     --radius: 0.5rem;
@@ -45,291 +45,103 @@
     /* Mobile viewport height fix */
     --vh: 1vh;
   }
-
-  /* Add reduced motion classes */
-  .prefers-reduced-motion .animate-pulse-slow,
-  .prefers-reduced-motion .animate-float,
-  .prefers-reduced-motion .animate-shimmer,
-  .prefers-reduced-motion .animate-gradient,
-  .prefers-reduced-motion .flowing-gradient,
-  .prefers-reduced-motion .flowing-gradient::before,
-  .prefers-reduced-motion .flowing-gradient::after,
-  .prefers-reduced-motion .animated-card-bg::before,
-  .prefers-reduced-motion .animated-card-bg::after {
-    animation: none !important;
-    transition: none !important;
-  }
-
-  /* Calculate viewport height fix for mobile */
-  @media (max-width: 768px) {
-    :root {
-      --vh: 1vh;
-    }
-  }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  html {
-    -webkit-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-    overflow-x: hidden;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    touch-action: manipulation;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
-    height: 100%;
-    position: relative;
-    overflow-y: auto;
-    overflow-x: hidden;
-    max-width: 100vw;
-    display: flex;
-    flex-direction: column;
-    line-height: 1.5;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  /* Minimum font size for better readability */
-  @media (max-width: 640px) {
-    body {
-      font-size: 16px;
-    }
-  }
-
-  /* Ensure proper sizing on mobile devices with dynamic toolbars */
-  .min-h-screen {
-    min-height: 100vh; /* fallback */
-    min-height: calc(var(--vh, 1vh) * 100);
-  }
-
-  .h-screen {
-    height: 100vh; /* fallback */
-    height: calc(var(--vh, 1vh) * 100);
-  }
-
-  /* Remove the duplicate scrollbars */
-  #__next,
-  main,
-  div[data-nextjs-scroll-focus-boundary] {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
-
-  /* Ensure footer sticks to bottom */
-  main {
-    flex: 1 0;
-  }
-
-  footer {
-    flex-shrink: 0;
-  }
-
-  /* Custom scrollbar */
-  ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-
-  ::-webkit-scrollbar-track {
-    @apply bg-black-900;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    @apply bg-gold-500 rounded-full;
-  }
-
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-gold-400;
-  }
-
-  /* For touch devices, make scrollbars thinner */
-  @media (hover: none) and (pointer: coarse) {
-    ::-webkit-scrollbar {
-      width: 4px;
-      height: 4px;
-    }
-  }
-
-  /* Reduced spacing between sections */
-  section {
-    @apply py-12 sm:py-16 md:py-20;
-  }
-
-  /* Better handling of overflows */
-  img, svg, video, canvas, audio, iframe, embed, object {
-    display: block;
-    vertical-align: middle;
-    max-width: 100%;
-  }
-
-  /* Better button and interactive element sizing for touch */
-  button, a, input, select, textarea {
-    touch-action: manipulation;
-  }
-}
-
-@layer utilities {
+@layer components {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-gold-400 to-gold-600;
+    @apply bg-gradient-to-r from-gold-400 to-gold-600 inline-block text-transparent bg-clip-text;
   }
 
-  /* Optimize background gradient - simplified */
-  .bg-meditation {
-    background: linear-gradient(to bottom, #050505, #09090f, #080818);
+  .cosmic-bg {
     position: relative;
   }
 
-  .bg-meditation::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 30% 20%, rgba(107, 57, 137, 0.05), transparent 60%),
-                radial-gradient(circle at 70% 80%, rgba(56, 96, 155, 0.05), transparent 40%),
-                radial-gradient(circle at 90% 10%, rgba(183, 53, 45, 0.05), transparent 50%);
-    z-index: 0;
-    /* Remove CPU-intensive animation */
-  }
-
-  /* Flowing gradient background for hero section */
-  .flowing-gradient {
-    position: relative;
-    background: linear-gradient(to bottom, #4b3b00, #030311, #04042e);
-    overflow: hidden;
-  }
-
-  .flowing-gradient::before,
-  .flowing-gradient::after {
+  .cosmic-bg::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 0;
-    opacity: 0.5;
-    transition: opacity 0.5s ease;
+    background-image: url('/cosmic-bg.svg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.05;
+    z-index: -1;
   }
 
-  .flowing-gradient::before {
-    background: linear-gradient(145deg, transparent 20%, rgba(76, 20, 112, 0.2) 40%, rgba(28, 21, 77, 0.3) 60%, transparent 80%);
-    animation: gradient-flow-1 15s ease infinite alternate;
-    background-size: 400% 400%;
+  .card-glow-hover {
+    transition: all 0.3s ease;
   }
 
-  .flowing-gradient::after {
-    background: linear-gradient(215deg, transparent 30%, rgba(23, 42, 96, 0.2) 45%, rgba(57, 12, 55, 0.3) 70%, transparent 90%);
-    animation: gradient-flow-2 20s ease infinite alternate;
-    background-size: 300% 300%;
+  .card-glow-hover:hover {
+    box-shadow: 0 0 20px rgba(234, 179, 8, 0.2);
+    transform: translateY(-5px);
   }
 
-  @keyframes gradient-flow-1 {
-    0% {
-      background-position: 0% 0%;
-    }
-    50% {
-      background-position: 100% 100%;
-    }
-    100% {
-      background-position: 0% 0%;
-    }
+  .white-text {
+    color: white;
   }
 
-  @keyframes gradient-flow-2 {
-    0% {
-      background-position: 100% 0%;
-    }
-    50% {
-      background-position: 0% 100%;
-    }
-    100% {
-      background-position: 100% 0%;
-    }
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  /* Dark orb styles for hero section */
-  .dark-orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(70px);
-    opacity: 0.3;
-    transform-origin: center;
-    animation: pulse-slow 15s ease-in-out infinite;
+  .hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
   }
 
-  .dark-orb.purple {
-    background: radial-gradient(circle at 30% 30%, rgba(147, 51, 234, 0.4), rgba(76, 29, 149, 0.1));
-    animation-delay: 0s;
+  .hover-glow {
+    transition: box-shadow 0.3s ease;
   }
 
-  .dark-orb.blue {
-    background: radial-gradient(circle at 70% 70%, rgba(59, 130, 246, 0.3), rgba(37, 99, 235, 0.1));
-    animation-delay: -5s;
+  .hover-glow:hover {
+    box-shadow: 0 0 15px rgba(234, 179, 8, 0.25);
   }
 
-  .dark-orb.indigo {
-    background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.3), rgba(67, 56, 202, 0.1));
-    animation-delay: -10s;
+  .animate-pulse-slow {
+    animation: pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 
-  /* Additional CSS animations */
-  @keyframes pulse-slow {
+  @keyframes pulse {
     0%, 100% {
-      opacity: 0.2;
-      transform: scale(1);
+      opacity: 0.5;
     }
     50% {
-      opacity: 0.4;
-      transform: scale(1.05);
+      opacity: 0.2;
     }
   }
 
-  @keyframes fade-in-up {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  /* CSS-only animation utility classes */
   .animate-fade-in {
-    animation: fade-in 1s ease forwards;
+    animation: fadeIn 1s ease-in-out forwards;
+    opacity: 0;
   }
 
   .animate-fade-in-up {
-    animation: fade-in-up 1s ease forwards;
+    animation: fadeInUp 1s ease-in-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
   }
 
-  .delay-100 {
-    animation-delay: 0.1s;
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .delay-200 {
@@ -340,96 +152,232 @@
     animation-delay: 0.3s;
   }
 
-  .delay-400 {
-    animation-delay: 0.4s;
-  }
-
   .delay-500 {
     animation-delay: 0.5s;
   }
 
-  /* Enhanced hover effects */
-  .hover-lift {
-    transition: transform 0.3s ease;
-  }
-
-  .hover-lift:hover {
-    transform: translateY(-5px);
-  }
-
-  .hover-glow {
-    transition: box-shadow 0.3s ease;
-  }
-
-  .hover-glow:hover {
-    box-shadow: 0 0 20px rgba(255, 181, 51, 0.3);
-  }
-
-  .text-gradient {
-    background: linear-gradient(to right, #FFB533, #FF3B3B);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    display: inline-block;
-  }
-
-  /* Fix for animations not showing content */
-  .flowing-gradient {
-    position: relative;
+  .bg-meditation {
     background-color: #000;
-    color: white;
+    background-image: radial-gradient(circle at 90% 10%, rgba(var(--card-red-start), 0.1), transparent 40%),
+                      radial-gradient(circle at 10% 90%, rgba(111, 45, 189, 0.1), transparent 40%);
   }
+}
 
-  .card-glow-hover {
-    transition: all 0.3s ease;
-    will-change: transform;
-  }
+/* Define min-height for main layout elements */
+html, body {
+  min-height: 100vh;
+}
 
-  .card-glow-hover:hover {
-    box-shadow: 0 0 20px rgba(255, 181, 51, 0.3);
-    transform: translateY(-5px);
-  }
-
-  /* Cosmic background with stars - simplified */
-  .cosmic-bg {
+/* Mobile viewport height fix */
+@media (max-width: 767px) {
+  .min-h-screen {
+    min-height: calc(var(--vh, 1vh) * 100);
     position: relative;
-  }
-
-  .cosmic-bg::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background-image:
-      radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-      radial-gradient(circle at 50% 80%, rgba(255, 255, 255, 0.01) 1px, transparent 1px),
-      radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.02) 2px, transparent 2px);
-    background-size: 100px 100px, 150px 150px, 200px 200px;
     z-index: 1;
-    pointer-events: none;
   }
 }
 
-/* Embla Carousel Styles */
-.embla {
-  --slide-spacing: 1rem;
-  --slide-size: 100%;
-  --slide-height: 19rem;
-  overflow: hidden;
+/* Layout class for creating full-height sections with header offset */
+.layout-section {
+  min-height: calc(100vh - 80px);
+  padding-top: 80px;
 }
 
-.embla__container {
-  backface-visibility: hidden;
-  display: flex;
-  touch-action: pan-y;
-  margin-left: calc(var(--slide-spacing) * -1);
+main {
+  flex: 1 0;
+  padding-top: 70px; /* Ensure content doesn't overlap with fixed header */
 }
 
-.embla__slide {
-  flex: 0 0 var(--slide-size);
-  min-width: 0;
-  padding-left: var(--slide-spacing);
+/* Better prose styling for blog content */
+.prose {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-wrap: break-word !important;
+  word-wrap: break-word !important;
+  hyphens: auto;
+}
+
+@media (max-width: 640px) {
+  .prose {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+.prose h1 {
+  font-size: 2.25rem;
+  line-height: 1.2;
+  margin-top: 2em;
+  margin-bottom: 0.8em;
+  color: #fff;
+  font-weight: 700;
+  padding-top: 0.5em;
+  margin-top: 1.5em;
   position: relative;
+}
+
+.prose h2 {
+  font-size: 1.75rem;
+  line-height: 1.3;
+  margin-top: 1.75em;
+  margin-bottom: 0.75em;
+  color: #fff;
+  font-weight: 600;
+  padding-top: 0.5em;
+  margin-top: 1.5em;
+  position: relative;
+}
+
+.prose h3 {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin-top: 1.5em;
+  margin-bottom: 0.7em;
+  color: #fff;
+  font-weight: 600;
+  padding-top: 0.5em;
+  margin-top: 1.5em;
+  position: relative;
+}
+
+.prose h4 {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-top: 1.25em;
+  margin-bottom: 0.65em;
+  color: #fff;
+  font-weight: 600;
+  padding-top: 0.5em;
+  margin-top: 1.5em;
+  position: relative;
+}
+
+.prose p {
+  margin-bottom: 1.5em;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.prose a {
+  color: rgba(234, 179, 8, 0.9);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s ease-in-out;
+}
+
+.prose a:hover {
+  color: rgba(234, 179, 8, 1);
+}
+
+.prose ul, .prose ol {
+  margin-left: 1.5em;
+  margin-bottom: 1.5em;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.prose li {
+  margin-bottom: 0.5em;
+}
+
+.prose blockquote {
+  font-style: italic;
+  border-left: 4px solid rgba(234, 179, 8, 0.5);
+  padding-left: 1em;
+  margin: 1.5em 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.prose pre {
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0.375rem;
+  padding: 1rem;
+  margin: 1.5em 0;
+}
+
+.prose code {
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+}
+
+/* Fix for content overlapping in blog post */
+.min-h-screen {
+  position: relative;
+  z-index: 1;
+}
+
+/* Header fixes */
+header.fixed {
+  position: fixed !important;
+  z-index: 999 !important;
+  width: 100%;
+}
+
+/* Force black background on scrolled header */
+header[class*="bg-black"] {
+  background-color: #000 !important;
+}
+
+/* Ensure article content is properly contained */
+article {
+  overflow: hidden;
+  position: relative;
+}
+
+article img {
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: contain;
+}
+
+/* Adjust content positioning in blog posts */
+.prose {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Fix content display issues */
+.prose > * {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  max-width: 100%;
+}
+
+/* Additional fixes for media */
+.prose img,
+.prose video,
+.prose iframe {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+  margin: 2em auto;
+  border-radius: 0.5rem;
+}
+
+/* Add padding for the blog content to prevent overlapping with the header */
+.blog-content {
+  padding-top: 120px;
+}
+
+/* Apply word-break only where needed */
+.break-words {
+  word-break: break-word;
+}
+
+/* Fix for overflow issues */
+main, article, section, div {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  max-width: 100vw;
+  word-break: normal;
 }

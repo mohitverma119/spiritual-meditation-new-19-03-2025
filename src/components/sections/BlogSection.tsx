@@ -69,7 +69,10 @@ export default function BlogSection() {
                   <div className="text-white/60 text-xs">
                     {post.author} • {post.date}
                   </div>
-                  <Link href={`/blog/${post.id}`} className="text-gold-500 text-sm font-medium hover:text-gold-400 transition-colors">
+                  <Link
+                    href={`/blog/${post.id}`}
+                    className="text-gold-500 text-sm font-medium hover:text-gold-400 transition-colors"
+                  >
                     Read More
                   </Link>
                 </div>

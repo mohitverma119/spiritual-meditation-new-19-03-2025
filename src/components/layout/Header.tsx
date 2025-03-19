@@ -42,6 +42,8 @@ export default function Header() {
       }
     };
 
+    // Initialize scroll state
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -68,11 +70,14 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
         isScrolled
-          ? "bg-black-950/90 backdrop-blur-md py-2 sm:py-3 shadow-lg"
+          ? "bg-black py-2 sm:py-3 shadow-lg"
           : "bg-transparent py-3 sm:py-6"
       }`}
+      style={{
+        backgroundColor: isScrolled ? 'rgb(0, 0, 0)' : 'transparent',
+      }}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 z-20 outline-none focus-visible:ring-2 focus-visible:ring-gold-500 rounded-lg">
@@ -134,7 +139,7 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-16 z-10 bg-black-900/95 backdrop-blur-lg border-t border-gold-500/20 overflow-auto flex flex-col">
+        <div className="md:hidden fixed inset-0 top-16 z-10 bg-black border-t border-gold-500/20 overflow-auto flex flex-col">
           <div className="container mx-auto py-6 flex flex-col space-y-4 px-4 flex-grow">
             {navItems.map((item) => (
               <Link

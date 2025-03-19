@@ -8,7 +8,15 @@ const config = {
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
   ],
-  prefix: "",
+  safelist: [
+    'prose',
+    'prose-lg',
+    'prose-invert',
+    'max-w-none',
+    'w-full',
+    'overflow-visible',
+    'break-words'
+  ],
   theme: {
     container: {
       center: true,

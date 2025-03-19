@@ -7,19 +7,54 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { useParams } from "next/navigation";
+import { useParams, usePathname } from "next/navigation";
 import blogPosts from "@/data/blogPosts.json";
 
 export default function BlogPostPage() {
-  const { slug } = useParams();
+  const params = useParams();
+  const pathname = usePathname();
   const [post, setPost] = useState<typeof blogPosts[0] | null>(null);
+  const [debug, setDebug] = useState<any>({});
   const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
+    // Get the slug as string
+    const slug = Array.isArray(params.slug) ? params.slug[0] : params.slug;
+
+    // Debug information
+    setDebug({
+      pathname,
+      params,
+      slug,
+      allPostIds: blogPosts.map(p => p.id),
+      postCount: blogPosts.length
+    });
+
     // Find the post that matches the slug
     const foundPost = blogPosts.find((p) => p.id === slug);
-    setPost(foundPost || null);
-  }, [slug]);
+
+    if (foundPost) {
+      console.log("Found matching post:", foundPost.title);
+      setPost(foundPost);
+
+      // Set page title for better SEO
+      document.title = `${foundPost.title} | Wild World Wanderers`;
+    } else {
+      console.log("No matching post found for slug:", slug);
+      setPost(null);
+    }
+
+    // Fix for mobile viewport issues
+    const fixViewport = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
+
+    window.addEventListener('resize', fixViewport);
+    fixViewport();
+
+    return () => window.removeEventListener('resize', fixViewport);
+  }, [params, pathname]);
 
   const fadeIn = shouldReduceMotion ? {} : {
     initial: { opacity: 0 },
@@ -35,11 +70,21 @@ export default function BlogPostPage() {
 
   if (!post) {
     return (
-      <div className="min-h-screen flex flex-col bg-black-950">
+      <div className="min-h-screen flex flex-col bg-black">
         <Header />
-        <main className="flex-grow flex items-center justify-center">
+        <main className="flex-grow flex items-center justify-center pt-28 pb-16">
           <div className="text-center">
             <h1 className="text-2xl text-white mb-4">Article not found</h1>
+            <p className="text-white/60 mb-6">The article you're looking for doesn't exist or has been removed.</p>
+
+            {/* Debug information display */}
+            <div className="text-sm text-white/60 mb-6 max-w-md mx-auto text-left p-4 bg-black-900 rounded">
+              <h3 className="font-medium mb-2">Debug Info:</h3>
+              <pre className="whitespace-pre-wrap break-words">
+                {JSON.stringify(debug, null, 2)}
+              </pre>
+            </div>
+
             <Link href="/blog">
               <Button>Return to Blog</Button>
             </Link>
@@ -51,19 +96,18 @@ export default function BlogPostPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-black-950">
+    <div className="min-h-screen flex flex-col bg-black">
       <Header />
 
-      <main className="flex-grow">
-        <article className="py-16 md:py-20 relative overflow-hidden bg-meditation cosmic-bg">
+      <main className="flex-grow w-full mt-16 pt-8">
+        {/* Article container with proper padding for header */}
+        <article className="w-full bg-black">
           {/* Background gradients - simplified */}
-          <div className="absolute inset-0 z-0">
-            <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-black-950 to-transparent" />
-            <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-black-950 to-transparent" />
-            <div className="absolute top-1/3 left-1/4 w-64 h-64 rounded-full bg-red-500/5 blur-3xl animate-pulse-slow" />
+          <div className="absolute inset-0 z-0 pointer-events-none">
+            <div className="absolute top-1/3 left-1/4 w-64 h-64 rounded-full bg-red-500/5 blur-3xl" />
           </div>
 
-          <div className="container mx-auto px-4 relative z-10 pt-16">
+          <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
             {/* Navigation links */}
             <motion.div
               {...fadeIn}
@@ -84,7 +128,7 @@ export default function BlogPostPage() {
             {/* Article Header */}
             <motion.div
               {...fadeInUp}
-              className="max-w-4xl mx-auto mb-8"
+              className="mb-8"
             >
               <div className="inline-block mb-3 px-3 py-1 bg-gradient-to-r from-red-500/20 to-purple-500/20 rounded-full">
                 <span className="text-white text-sm font-medium">{post.category}</span>
@@ -105,7 +149,7 @@ export default function BlogPostPage() {
             <motion.div
               {...fadeIn}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="max-w-5xl mx-auto mb-12"
+              className="mb-12"
             >
               <div className="aspect-[16/9] rounded-xl overflow-hidden">
                 <Image
@@ -124,7 +168,7 @@ export default function BlogPostPage() {
             <motion.div
               {...fadeInUp}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="max-w-3xl mx-auto mb-16"
+              className="mb-16"
             >
               <div
                 className="prose prose-lg prose-invert max-w-none"
@@ -136,7 +180,7 @@ export default function BlogPostPage() {
             <motion.div
               {...fadeInUp}
               transition={{ duration: 0.4, delay: 0.3 }}
-              className="max-w-3xl mx-auto border-t border-white/10 pt-8 flex flex-wrap justify-between"
+              className="border-t border-white/10 pt-8 flex flex-wrap justify-between items-center gap-4 mb-16"
             >
               <div>
                 <h3 className="text-white text-lg font-medium mb-2">Share this article</h3>
