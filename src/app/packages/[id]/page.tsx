@@ -12,9 +12,15 @@ import {
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { notFound } from "next/navigation";
+import { useParams } from "next/navigation";
 
-export default function PackageDetailPage({ params }: { params: { id: string } }) {
-  const pkg = packages.find(p => p.id === params.id);
+// Change from server component to client component with useParams hook
+export default function PackageDetailPage() {
+  // Get the id from the URL params
+  const params = useParams();
+  const id = params?.id as string;
+
+  const pkg = packages.find(p => p.id === id);
 
   if (!pkg) {
     return notFound();

@@ -10,11 +10,20 @@ import Footer from "@/components/layout/Footer";
 import { useParams, usePathname } from "next/navigation";
 import blogPosts from "@/data/blogPosts.json";
 
+// Define a proper type for debug state
+interface DebugInfo {
+  pathname?: string;
+  paramsInfo?: string; // Use string type instead of any
+  slug?: string;
+  allPostIds?: string[];
+  postCount?: number;
+}
+
 export default function BlogPostPage() {
   const params = useParams();
   const pathname = usePathname();
   const [post, setPost] = useState<typeof blogPosts[0] | null>(null);
-  const [debug, setDebug] = useState<any>({});
+  const [debug, setDebug] = useState<DebugInfo>({});
   const shouldReduceMotion = useReducedMotion();
 
   useEffect(() => {
@@ -24,7 +33,7 @@ export default function BlogPostPage() {
     // Debug information
     setDebug({
       pathname,
-      params,
+      paramsInfo: JSON.stringify(params), // Convert to string to avoid type issues
       slug,
       allPostIds: blogPosts.map(p => p.id),
       postCount: blogPosts.length
