@@ -105,7 +105,7 @@ export default function BlogPostPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-black">
+    <div className="min-h-screen flex flex-col bg-black-700">
       <Header />
 
       <main className="flex-grow w-full mt-16 pt-8">

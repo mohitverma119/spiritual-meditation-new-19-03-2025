@@ -84,7 +84,7 @@ export default function PackagesPage() {
       {/* Main content wrapper - using flex-col to push content down */}
       <div className="flex-grow flex flex-col">
         {/* Hero Banner */}
-        <section className="py-16 md:py-20 bg-meditation cosmic-bg">
+        <section className="py-16 md:py-20 bg-black-600 bg-meditation cosmic-bg">
           <div className="absolute inset-0 z-0">
             <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-black-950 to-transparent" />
             <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-black-950 to-transparent" />
@@ -119,7 +119,7 @@ export default function PackagesPage() {
         </section>
 
         {/* Content section - forced to display properly */}
-        <section className="py-12 md:py-16 bg-black-950 flex-1">
+        <section className="py-12 md:py-16 bg-black-700 flex-1">
           <div className="container mx-auto px-4">
             <div className="flex flex-col lg:flex-row gap-8">
               {/* Mobile filters toggle */}

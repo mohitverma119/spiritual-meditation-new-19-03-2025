@@ -60,7 +60,7 @@ export default function ItineraryPage() {
     <div className="flex flex-col min-h-screen bg-black-950">
       <Header />
 
-      <main className="flex-grow pt-24 lg:pt-28 pb-20 cosmic-bg relative overflow-hidden">
+      <main className="flex-grow pt-24 lg:pt-28 pb-20 cosmic-bg relative bg-black-600 overflow-hidden">
         {/* Background elements */}
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-black-950 to-transparent" />

@@ -56,7 +56,7 @@ export default function BlogPage() {
       <Header />
 
       <div className="flex-grow flex flex-col">
-        <section className="py-16 md:py-20 relative overflow-hidden bg-meditation cosmic-bg">
+        <section className="py-16 md:py-20 relative bg-black-700 overflow-hidden bg-meditation cosmic-bg">
           {/* Background gradients - simplified */}
           <div className="absolute inset-0 z-0">
             <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-black-950 to-transparent" />
