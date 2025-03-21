@@ -33,16 +33,6 @@
     "content": "<p>In a world that never stops talking, silence has become a rare and precious commodity. Our silent meditation retreats on the tranquil shores of Dal Lake offer participants an immersion into the transformative power of silence – not as an absence, but as a living presence that can heal, renew, and awaken.</p><h2>The Setting</h2><p>We host these retreats on a private houseboat, traditionally known as a \"doonga,\" that has been in the same Kashmiri family for five generations. Lovingly restored to balance authentic character with modern comforts, the houseboat creates a floating sanctuary where the gentle lapping of water becomes a natural sound meditation.</p>"
   },
   {
-    "id": "meditation-techniques",
-    "title": "Ancient Meditation Techniques for Modern Lives",
-    "excerpt": "How to incorporate time-tested Kashmiri meditation techniques into your busy modern lifestyle for greater peace and clarity.",
-    "author": "Maya Gupta",
-    "date": "Dec 20, 2024",
-    "image": "/images/blogs/photo-1508672019048-805c876b67e2.jpg",
-    "category": "Practices",
-    "readTime": "7 min read"
-  },
-  {
     "id": "kashmiri-cuisine",
     "title": "The Spiritual Dimensions of Kashmiri Cuisine",
     "excerpt": "Exploring how traditional Kashmiri cooking practices and vegetarian dishes support meditation and spiritual growth.",
@@ -50,7 +40,8 @@
     "date": "Nov 5, 2024",
     "image": "/images/blogs/photo-1589302168068-964664d93dc0.jpg",
     "category": "Culture",
-    "readTime": "4 min read"
+    "readTime": "4 min read",
+    "content": "<p>Exploring how traditional Kashmiri cooking practices and vegetarian dishes support meditation and spiritual growth.</p>"
   },
   {
     "id": "mindful-trekking",
@@ -60,36 +51,7 @@
     "date": "Oct 12, 2024",
     "image": "/images/blogs/photo-1515876305430-f06edab8282a.jpg",
     "category": "Spiritual Journeys",
-    "readTime": "5 min read"
-  },
-  {
-    "id": "sacred-architecture",
-    "title": "The Sacred Architecture of Kashmir",
-    "excerpt": "Understanding the spiritual principles encoded in Kashmir's temples, mosques, and spiritual centers.",
-    "author": "Aryan Sharma",
-    "date": "Sep 25, 2024",
-    "image": "/images/blogs/photo-1618982469815-bbeaecb45359.jpg",
-    "category": "Culture",
-    "readTime": "9 min read"
-  },
-  {
-    "id": "sufi-traditions",
-    "title": "Sufi Traditions of Kashmir",
-    "excerpt": "Exploring the mystical Sufi traditions that have flourished in Kashmir and their universal messages of love and unity.",
-    "author": "Leila Patel",
-    "date": "Aug 18, 2024",
-    "image": "/images/blogs/photo-1575844261401-d69721eb9841.jpg",
-    "category": "Teachings",
-    "readTime": "6 min read"
-  },
-  {
-    "id": "seasonal-retreats",
-    "title": "The Power of Seasonal Retreats",
-    "excerpt": "Why we schedule our retreats to align with nature's rhythms and how each season in Kashmir offers unique spiritual gifts.",
-    "author": "Rahul Khan",
-    "date": "Jul 7, 2024",
-    "image": "/images/blogs/photo-1605007493699-af65834f8a00.jpg",
-    "category": "Retreats",
-    "readTime": "5 min read"
+    "readTime": "5 min read",
+    "content": "<p>How our guided treks through the Himalayan foothills become moving meditations that clear the mind and open the heart.</p>"
   }
 ]
