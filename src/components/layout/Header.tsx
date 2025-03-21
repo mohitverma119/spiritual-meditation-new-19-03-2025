@@ -165,7 +165,7 @@ export default function Header() {
               onClick={handleNavClick}
               className="bg-red-500 hover:bg-red-600 text-white mt-4 w-full py-6 text-lg"
             >
-              Call 95955-95959
+              Call 95955-95955
             </Button>
           </div>
         </div>
