@@ -106,7 +106,7 @@ export default function Header() {
         <Link href="/" className="flex items-center gap-2 z-20 outline-none focus-visible:ring-2 focus-visible:ring-gold-500 rounded-lg">
           <div className="relative h-16 w-20">
             <Image
-              src="logo.webp"
+              src="/logo.webp"
               alt="Wild World Wanderers Logo"
               width={84}
               height={84}
