@@ -175,14 +175,14 @@ export default function Header() {
               }
             }
           `}</style>
-          <div className="md:hidden bg-black-950 fixed inset-0 top-16 z-10 bg-black border-t border-gold-500/20 overflow-auto flex flex-col">
-            <div className="container mx-auto py-6 flex flex-col space-y-4 px-4 flex-grow">
+          <div className="md:hidden bg-black-950 fixed inset-0 top-16 z-10 bg-black border-gold-500/20 overflow-auto flex flex-col">
+            <div className="container mx-auto py-6 mt-6 flex flex-col space-y-4 px-4 flex-grow">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
                   onClick={handleNavClick}
-                  className="text-gold-400 hover:text-gold-300 transition-colors py-4 px-4 hover:bg-black-800 rounded-md text-xl flex items-center"
+                  className="text-gold-400 hover:text-gold-300 transition-colors py-2 px-4 hover:bg-black-800 rounded-md text-xl flex items-center"
                 >
                   {item.name}
                 </Link>
