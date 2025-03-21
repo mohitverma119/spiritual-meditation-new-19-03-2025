@@ -3,13 +3,13 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react"; // Added Phone icon
 import PWAInstallButton from "@/components/ui/pwa-install-button";
 import Image from "next/image";
 
 const navItems = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" }, // Updated navigation item
+  { name: "About", href: "/about" },
   { name: "Gallery", href: "/gallery" },
   { name: "Packages", href: "/packages" },
   { name: "Blog", href: "/blog" },
@@ -90,7 +90,7 @@ export default function Header() {
   if (isScrolled) {
     headerClasses += " bg-black shadow-xl";
   } else if (isMobileMenuOpen) {
-    headerClasses += " bg-black shadow-xl md:bg-transparent"; // Explicitly set bg-black for mobile menu open, keep transparent for desktop
+    headerClasses += " bg-black shadow-xl md:bg-transparent";
   } else {
     headerClasses += " bg-transparent";
   }
@@ -134,9 +134,10 @@ export default function Header() {
 
           <a href="tel:+919419955663">
             <Button
-              className="bg-red-500 hover:bg-red-600 text-white ml-2 md:ml-4 min-h-[44px] min-w-[120px]"
+              className="bg-red-500 hover:bg-red-600 text-white ml-2 md:ml-4 min-h-[44px] min-w-[120px] flex items-center gap-2"
             >
-              Call 9419955663
+              <Phone size={18} />
+              <span>9419955663</span>
             </Button>
           </a>
         </nav>
@@ -165,7 +166,6 @@ export default function Header() {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <>
-          {/* Extra black overlay for mobile header when menu is open */}
           <style jsx global>{`
             @media (max-width: 767px) {
               .mobile-menu-open {
@@ -189,9 +189,10 @@ export default function Header() {
               <a href="tel:+919419955663" className="w-full">
                 <Button
                   onClick={handleNavClick}
-                  className="bg-red-500 hover:bg-red-600 text-white mt-4 w-full py-6 text-lg"
+                  className="bg-red-500 hover:bg-red-600 text-white mt-4 w-full py-6 text-lg flex items-center justify-center gap-2"
                 >
-                  Call 9419955663
+                  <Phone size={24} />
+                  <span>9419955663</span>
                 </Button>
               </a>
             </div>

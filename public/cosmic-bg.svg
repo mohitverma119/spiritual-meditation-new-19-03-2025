@@ -1,0 +1,54 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1920" height="1080" fill="url(#paint0_linear)" />
+
+  <!-- Stars -->
+  <g>
+    <circle cx="128" cy="195" r="1.5" fill="white" opacity="0.7" />
+    <circle cx="382" cy="342" r="1" fill="white" opacity="0.5" />
+    <circle cx="587" cy="123" r="1.5" fill="white" opacity="0.8" />
+    <circle cx="845" cy="387" r="1" fill="white" opacity="0.6" />
+    <circle cx="1120" cy="215" r="1.5" fill="white" opacity="0.9" />
+    <circle cx="1345" cy="453" r="1" fill="white" opacity="0.5" />
+    <circle cx="1578" cy="187" r="1.5" fill="white" opacity="0.7" />
+    <circle cx="1790" cy="387" r="1" fill="white" opacity="0.6" />
+    <circle cx="223" cy="587" r="1.5" fill="white" opacity="0.8" />
+    <circle cx="462" cy="723" r="1" fill="white" opacity="0.5" />
+    <circle cx="687" cy="553" r="1.5" fill="white" opacity="0.7" />
+    <circle cx="912" cy="687" r="1" fill="white" opacity="0.6" />
+    <circle cx="1234" cy="587" r="1.5" fill="white" opacity="0.9" />
+    <circle cx="1423" cy="723" r="1" fill="white" opacity="0.5" />
+    <circle cx="1678" cy="587" r="1.5" fill="white" opacity="0.8" />
+    <circle cx="1823" cy="723" r="1" fill="white" opacity="0.6" />
+    <circle cx="213" cy="887" r="1.5" fill="white" opacity="0.7" />
+    <circle cx="417" cy="953" r="1" fill="white" opacity="0.5" />
+    <circle cx="687" cy="887" r="1.5" fill="white" opacity="0.9" />
+    <circle cx="923" cy="1023" r="1" fill="white" opacity="0.6" />
+    <circle cx="1234" cy="887" r="1.5" fill="white" opacity="0.8" />
+    <circle cx="1456" cy="953" r="1" fill="white" opacity="0.5" />
+    <circle cx="1678" cy="887" r="1.5" fill="white" opacity="0.7" />
+    <circle cx="1823" cy="1023" r="1" fill="white" opacity="0.6" />
+  </g>
+
+  <!-- Larger stars -->
+  <circle cx="523" cy="245" r="2" fill="white" opacity="0.9">
+    <animate attributeName="opacity" from="0.9" to="0.5" dur="3s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="1245" cy="345" r="2" fill="white" opacity="0.9">
+    <animate attributeName="opacity" from="0.9" to="0.5" dur="4s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="745" cy="845" r="2" fill="white" opacity="0.9">
+    <animate attributeName="opacity" from="0.9" to="0.5" dur="5s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="1645" cy="745" r="2" fill="white" opacity="0.9">
+    <animate attributeName="opacity" from="0.9" to="0.5" dur="3.5s" repeatCount="indefinite" />
+  </circle>
+
+  <!-- Gradients and definitions -->
+  <defs>
+    <linearGradient id="paint0_linear" x1="960" y1="0" x2="960" y2="1080" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0F172A" />
+      <stop offset="0.5" stop-color="#1E293B" />
+      <stop offset="1" stop-color="#0F172A" />
+    </linearGradient>
+  </defs>
+</svg>
