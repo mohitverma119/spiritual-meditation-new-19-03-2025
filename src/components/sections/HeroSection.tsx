@@ -8,7 +8,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="min-h-[90vh] sm:min-h-screen relative flex items-center justify-center pt-16 overflow-hidden flowing-gradient"
+      className="min-h-[90vh] sm:min-h-screen relative flex items-center justify-center pt-24 overflow-hidden flowing-gradient"
     >
       {/* Animated background orbs */}
       <div className="absolute inset-0 z-0">

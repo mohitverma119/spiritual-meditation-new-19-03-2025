@@ -58,12 +58,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10">
           {/* Logo and Description */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center mb-4 sm:mb-6 outline-none focus-visible:ring-2 focus-visible:ring-gold-500 rounded-lg">
+            <Link href="/" className="pb-4 flex items-center mb-4 sm:mb-6 outline-none focus-visible:ring-2 focus-visible:ring-gold-500 rounded-lg">
               <div className="relative w-40 h-10">
                 <Image
-                  src="/logo.svg"
+                  src="/logo.webp"
                   alt="Wild World Wanderers Logo"
-                  width={160}
+                  width={80}
                   height={40}
                   className="object-contain"
                 />

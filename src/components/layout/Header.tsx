@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { Menu, X, Phone } from "lucide-react"; // Added Phone icon
 import PWAInstallButton from "@/components/ui/pwa-install-button";
-import Image from "next/image";
+import Image from "next/image"; // Importing Image from next/image
 
 const navItems = [
   { name: "Home", href: "/" },
@@ -104,14 +104,15 @@ export default function Header() {
     <header className={headerClasses}>
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 z-20 outline-none focus-visible:ring-2 focus-visible:ring-gold-500 rounded-lg">
-          <div className="relative h-10 w-40">
+          <div className="relative h-16 w-20">
             <Image
-              src="/logo.svg"
+              src="logo.webp"
               alt="Wild World Wanderers Logo"
-              width={160}
-              height={40}
+              width={84}
+              height={84}
               className="object-contain"
               priority
+              unoptimized // Use unoptimized to treat it like an external image
             />
           </div>
         </Link>
