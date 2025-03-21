@@ -8,6 +8,14 @@ import { Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { Phone, MessageCircle } from "lucide-react";
 
+// Add this line to declare workbox on window type
+declare global {
+  interface Window {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    workbox?: any; // Use a more specific type for workbox
+  }
+}
+
 // Load the Inter font with optimal settings for mobile
 const inter = Inter({
   subsets: ["latin"],
@@ -39,12 +47,12 @@ export default function ClientBody({
     if (
       typeof window !== "undefined" &&
       "serviceWorker" in navigator &&
-      window.workbox !== undefined
+      'workbox' in window
     ) {
       const registerServiceWorker = async () => {
         try {
-          const { registerSW } = await import("@/lib/register-service-worker");
-          registerSW();
+          const { registerServiceWorker } = await import("@/lib/register-service-worker");
+          registerServiceWorker();
         } catch (error) {
           console.error("Service worker registration failed:", error);
         }
