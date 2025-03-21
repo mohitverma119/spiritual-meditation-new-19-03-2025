@@ -8,12 +8,11 @@ import PWAInstallButton from "@/components/ui/pwa-install-button";
 import Image from "next/image";
 
 const navItems = [
-  { name: "Home", href: "#home" },
+  { name: "Home", href: "/" },
   { name: "Our Vision", href: "#overview" },
-  { name: "Gallery", href: "#gallery" },
-  { name: "Packages", href: "#packages" },
-  { name: "Blog", href: "#blog" },
-  { name: "Testimonials", href: "#testimonials" },
+  { name: "Gallery", href: "/gallery" },
+  { name: "Packages", href: "/packages" },
+  { name: "Blog", href: "/blog" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -123,7 +122,7 @@ export default function Header() {
           <Button
             className="bg-red-500 hover:bg-red-600 text-white ml-2 md:ml-4 min-h-[44px] min-w-[120px]"
           >
-            Explore Now
+            Call 95955-95959
           </Button>
         </nav>
 
@@ -166,7 +165,7 @@ export default function Header() {
               onClick={handleNavClick}
               className="bg-red-500 hover:bg-red-600 text-white mt-4 w-full py-6 text-lg"
             >
-              Explore Now
+              Call 95955-95959
             </Button>
           </div>
         </div>

@@ -105,15 +105,19 @@ export default function BlogPostPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-black-700">
+    <div className="min-h-screen flex flex-col bg-black-950">
       <Header />
 
       <main className="flex-grow w-full mt-16 pt-8">
         {/* Article container with proper padding for header */}
-        <article className="w-full bg-black">
+        <article className="w-full py-16 md:py-20 relative bg-black-700 overflow-hidden bg-meditation cosmic-bg">
           {/* Background gradients - simplified */}
+  
           <div className="absolute inset-0 z-0 pointer-events-none">
-            <div className="absolute top-1/3 left-1/4 w-64 h-64 rounded-full bg-red-500/5 blur-3xl" />
+          <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-black-950 to-transparent" />
+            <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-black-950 to-transparent" />
+            <div className="absolute top-1/3 left-1/4 w-64 h-64 rounded-full bg-red-500/5 blur-3xl animate-pulse-slow" />
+            
           </div>
 
           <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
