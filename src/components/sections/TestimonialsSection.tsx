@@ -29,8 +29,8 @@ export default function TestimonialsSection() {
             <span className="text-white text-sm font-medium">Traveler Stories</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            <span className="text-white">Transformed</span>{" "}
-            <span className="text-gradient">Journeys</span>
+            <span className="text-white">Unforgettable</span>{" "}
+            <span className="text-gradient">Stories</span>
           </h2>
           <p className="text-lg text-white">
             Hear from those who have walked the path before you. Their stories of
@@ -50,7 +50,7 @@ export default function TestimonialsSection() {
             <CarouselContent>
               {testimonials.map((testimonial, index) => (
                 <CarouselItem key={testimonial.id} className="md:basis-1/2 lg:basis-1/3 pl-4 pr-4">
-                  <div className="h-full bg-black-700/60 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-6 flex flex-col hover-lift hover-glow transition-all duration-300">
+                  <div className="h-full bg-black-600/60 backdrop-blur-sm border border-white/10 rounded-2xl p-6 md:p-6 flex flex-col hover-lift hover-glow transition-all duration-300">
                     <div className="text-3xl text-gold-500 mb-4">❝</div>
                     <p className="text-white text-base mb-6 italic flex-grow">
                       {testimonial.quote}

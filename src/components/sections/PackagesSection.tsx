@@ -92,7 +92,7 @@ export default function PackagesSection() {
                   <Link href={`/packages/${pkg.id}`}>
                     <Button
                       variant="outline"
-                      className="text-gold-500 border-gold-500/50 hover:bg-gold-500/10"
+                      className="text-gold-500 border-gold-500/50 hover:bg-gold-500/10 hover:text-gold-600"
                     >
                       View Details
                     </Button>
