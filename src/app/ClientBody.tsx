@@ -86,20 +86,19 @@ export default function ClientBody({
           href="https://wa.me/919419955663"
           target="_blank"
           rel="noopener noreferrer"
-          className="whatsapp-btn w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 hover:scale-110 transition-colors duration-300"
+          className="whatsapp-btn w-12 h-12 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 hover:scale-110 transition-colors duration-300"
           aria-label="Chat on WhatsApp"
         >
-          <MessageCircle size={24} className="text-white" />
+          <MessageCircle size={22} className="text-white" />
         </a>
 
-        {/* Phone Button */}
-        <a
+       {/* <a
           href="tel:+919419955663"
           className="phone-btn w-14 h-14 bg-red-500 rounded-full flex items-center justify-center shadow-lg hover:bg-red-600 hover:scale-110 transition-colors duration-300"
           aria-label="Call us"
         >
           <Phone size={24} className="text-white" />
-        </a>
+        </a> */}
       </div>
     </>
   );
