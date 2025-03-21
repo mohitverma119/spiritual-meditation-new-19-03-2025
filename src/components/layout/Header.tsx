@@ -84,7 +84,7 @@ export default function Header() {
   }
 
   // Build header classes
-  let headerClasses = "fixed top-0 left-0 right-0 z-[100] transition-all duration-300 py-3 sm:py-6";
+  let headerClasses = "fixed top-0 left-0 right-0 z-[100] transition-all duration-300 py-3 sm:py-3";
 
   // Apply different background colors based on state
   if (isScrolled) {
