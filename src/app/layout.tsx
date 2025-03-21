@@ -1,8 +1,17 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
-import ClientBody from "./ClientBody";
+import { Inter } from "next/font/google";
 import PWAMetaTags from "@/components/pwa-meta-tags";
+import ClientBody from "./ClientBody";
+
+// Load the Inter font with optimal settings for mobile
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
   title: "Kashmir's Spiritual Meditation Journeys | Wild World Wanderers",
@@ -73,15 +82,16 @@ export default function RootLayout({
     <html lang="en" className="bg-black-950 scroll-smooth">
       <head>
         <PWAMetaTags />
-        {/* Force no-cache meta tags */}
         <meta httpEquiv="Cache-Control" content="no-cache, no-store, must-revalidate, max-age=0" />
         <meta httpEquiv="Pragma" content="no-cache" />
         <meta httpEquiv="Expires" content="0" />
       </head>
-      <ClientBody>
-        {children}
-        <Analytics />
-      </ClientBody>
+      <body className={`antialiased overflow-x-hidden text-base touch-manipulation bg-black-950 ${inter.className}`} suppressHydrationWarning>
+        <ClientBody>
+          {children}
+          <Analytics />
+        </ClientBody>
+      </body>
     </html>
   );
 }
