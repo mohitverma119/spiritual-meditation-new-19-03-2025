@@ -33,7 +33,7 @@ export const packages: Package[] = [
     image: "/images/gallery/the-stunning-landscapes-in-kashmir-captures-the-serene-beauty-generative-ai-free-photo.jpg",
     duration: "15 Days 14 Nights",
     locations: ["Srinagar", "Anantnag", "Ganderbal", "Pahalgam"],
-    price: "$3,999",
+    price: "₹3,999",
     highlights: [
       "Guided by renowned spiritual teacher Andrew Harvey",
       "Visit to sacred Samkaropala (Shiva Sutra Rock)",
@@ -146,7 +146,7 @@ export const packages: Package[] = [
     image: "/images/gallery/photo-1566837486475-98933a0ecdbf.jpg",
     duration: "10 Days 9 Nights",
     locations: ["Srinagar", "Pahalgam", "Sonamarg"],
-    price: "$2,599",
+    price: "₹2,599",
     highlights: [
       "Silent Meditation by Dal Lake",
       "Sacred Temple Circuit",
@@ -231,7 +231,7 @@ export const packages: Package[] = [
     image: "/images/gallery/photo-1583249598754-110018cb6851.jpg",
     duration: "7 Days 6 Nights",
     locations: ["Srinagar", "Ganderbal"],
-    price: "$1,899",
+    price: "₹1,899",
     highlights: [
       "Artisan workshops and demonstrations",
       "Traditional Kashmiri cuisine experiences",
@@ -306,7 +306,7 @@ export const packages: Package[] = [
     image: "/images/gallery/photo-1574862393418-8cb3ddc0004c.jpg",
     duration: "8 Days 7 Nights",
     locations: ["Srinagar", "Pahalgam"],
-    price: "$2,199",
+    price: "₹2,199",
     highlights: [
       "Personalized Ayurvedic consultations",
       "Traditional healing treatments",
@@ -387,7 +387,7 @@ export const packages: Package[] = [
     image: "/images/gallery/photo-1527786356703-4b100091cd2c.jpg",
     duration: "8 Days 7 Nights",
     locations: ["Srinagar", "Sonamarg", "Pahalgam"],
-    price: "$2,499",
+    price: "₹2,499",
     highlights: [
       "Himalayan forest meditation walks",
       "Alpine meadow experiences",
@@ -472,7 +472,7 @@ export const packages: Package[] = [
     image: "/images/gallery/the-stunning-landscapes-in-kashmir-captures-the-serene-beauty-generative-ai-free-photo.jpg",
     duration: "9 Days 8 Nights",
     locations: ["Srinagar", "Anantnag", "Bijbehara"],
-    price: "$2,399",
+    price: "₹2,399",
     highlights: [
       "Visit to significant Sufi shrines",
       "Exclusive Sufi Music Night",

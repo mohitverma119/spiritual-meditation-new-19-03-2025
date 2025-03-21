@@ -9,11 +9,11 @@ import Image from "next/image";
 
 const navItems = [
   { name: "Home", href: "/" },
-  { name: "Our Vision", href: "#overview" },
+  { name: "About", href: "/about" }, // Updated navigation item
   { name: "Gallery", href: "/gallery" },
   { name: "Packages", href: "/packages" },
   { name: "Blog", href: "/blog" },
-  { name: "Contact", href: "#contact" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function Header() {
@@ -83,12 +83,25 @@ export default function Header() {
     return <header className="fixed top-0 left-0 right-0 h-[70px] sm:h-[80px] z-[100]"></header>;
   }
 
+  // Build header classes
+  let headerClasses = "fixed top-0 left-0 right-0 z-[100] transition-all duration-300 py-3 sm:py-6";
+
+  // Apply different background colors based on state
+  if (isScrolled) {
+    headerClasses += " bg-black shadow-xl";
+  } else if (isMobileMenuOpen) {
+    headerClasses += " bg-black shadow-xl md:bg-transparent"; // Explicitly set bg-black for mobile menu open, keep transparent for desktop
+  } else {
+    headerClasses += " bg-transparent";
+  }
+
+  // Add a specific mobile menu open class
+  if (isMobileMenuOpen) {
+    headerClasses += " mobile-menu-open";
+  }
+
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 py-3 sm:py-6 ${
-        isScrolled ? "bg-black shadow-xl" : "bg-transparent"
-      }`}
-    >
+    <header className={headerClasses}>
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 z-20 outline-none focus-visible:ring-2 focus-visible:ring-gold-500 rounded-lg">
           <div className="relative h-10 w-40">
@@ -119,11 +132,13 @@ export default function Header() {
           {/* PWA Install Button */}
           <PWAInstallButton className="mr-2" />
 
-          <Button
-            className="bg-red-500 hover:bg-red-600 text-white ml-2 md:ml-4 min-h-[44px] min-w-[120px]"
-          >
-            Call 95955-95959
-          </Button>
+          <a href="tel:+919419955663">
+            <Button
+              className="bg-red-500 hover:bg-red-600 text-white ml-2 md:ml-4 min-h-[44px] min-w-[120px]"
+            >
+              Call 9419955663
+            </Button>
+          </a>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -149,26 +164,39 @@ export default function Header() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-16 z-10 bg-black border-t border-gold-500/20 overflow-auto flex flex-col">
-          <div className="container mx-auto py-6 flex flex-col space-y-4 px-4 flex-grow">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                onClick={handleNavClick}
-                className="text-gold-400 hover:text-gold-300 transition-colors py-4 px-4 hover:bg-black-800 rounded-md text-xl flex items-center"
-              >
-                {item.name}
-              </Link>
-            ))}
-            <Button
-              onClick={handleNavClick}
-              className="bg-red-500 hover:bg-red-600 text-white mt-4 w-full py-6 text-lg"
-            >
-              Call 95955-95955
-            </Button>
+        <>
+          {/* Extra black overlay for mobile header when menu is open */}
+          <style jsx global>{`
+            @media (max-width: 767px) {
+              .mobile-menu-open {
+                background-color: black !important;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+              }
+            }
+          `}</style>
+          <div className="md:hidden bg-black-950 fixed inset-0 top-16 z-10 bg-black border-t border-gold-500/20 overflow-auto flex flex-col">
+            <div className="container mx-auto py-6 flex flex-col space-y-4 px-4 flex-grow">
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  onClick={handleNavClick}
+                  className="text-gold-400 hover:text-gold-300 transition-colors py-4 px-4 hover:bg-black-800 rounded-md text-xl flex items-center"
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <a href="tel:+919419955663" className="w-full">
+                <Button
+                  onClick={handleNavClick}
+                  className="bg-red-500 hover:bg-red-600 text-white mt-4 w-full py-6 text-lg"
+                >
+                  Call 9419955663
+                </Button>
+              </a>
+            </div>
           </div>
-        </div>
+        </>
       )}
     </header>
   );

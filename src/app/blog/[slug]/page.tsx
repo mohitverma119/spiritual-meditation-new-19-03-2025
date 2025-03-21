@@ -112,12 +112,12 @@ export default function BlogPostPage() {
         {/* Article container with proper padding for header */}
         <article className="w-full py-16 md:py-20 relative bg-black-700 overflow-hidden bg-meditation cosmic-bg">
           {/* Background gradients - simplified */}
-  
+
           <div className="absolute inset-0 z-0 pointer-events-none">
           <div className="absolute top-0 left-0 w-full h-64 bg-gradient-to-b from-black-950 to-transparent" />
             <div className="absolute bottom-0 left-0 w-full h-64 bg-gradient-to-t from-black-950 to-transparent" />
             <div className="absolute top-1/3 left-1/4 w-64 h-64 rounded-full bg-red-500/5 blur-3xl animate-pulse-slow" />
-            
+
           </div>
 
           <div className="container mx-auto px-4 sm:px-6 max-w-4xl">
@@ -198,21 +198,80 @@ export default function BlogPostPage() {
               <div>
                 <h3 className="text-white text-lg font-medium mb-2">Share this article</h3>
                 <div className="flex gap-2">
-                  <Button variant="outline" size="icon" className="w-10 h-10 rounded-full border-white/20">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
-                    </svg>
-                  </Button>
-                  <Button variant="outline" size="icon" className="w-10 h-10 rounded-full border-white/20">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
-                    </svg>
-                  </Button>
-                  <Button variant="outline" size="icon" className="w-10 h-10 rounded-full border-white/20">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
-                    </svg>
-                  </Button>
+                  <a
+                    href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Share on Twitter"
+                  >
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="w-10 h-10 rounded-full border-white/20 hover:bg-gold-500/20 hover:border-gold-500/50 transition-colors group"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" className="text-gold-500 group-hover:text-gold-400">
+                        <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
+                      </svg>
+                    </Button>
+                  </a>
+                  <a
+                    href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Share on Facebook"
+                  >
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="w-10 h-10 rounded-full border-white/20 hover:bg-gold-500/20 hover:border-gold-500/50 transition-colors group"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24" className="text-gold-500 group-hover:text-gold-400">
+                        <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
+                      </svg>
+                    </Button>
+                  </a>
+                  <a
+                    href={`mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent(`Check out this article: ${typeof window !== 'undefined' ? window.location.href : ''}`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Share via Email"
+                  >
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="w-10 h-10 rounded-full border-white/20 hover:bg-gold-500/20 hover:border-gold-500/50 transition-colors group"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gold-500 group-hover:text-gold-400">
+                        <rect width="20" height="16" x="2" y="4" rx="2" />
+                        <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                      </svg>
+                    </Button>
+                  </a>
+                  <div>
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      className="w-10 h-10 rounded-full border-white/20 hover:bg-gold-500/20 hover:border-gold-500/50 transition-colors group"
+                      onClick={() => {
+                        if (typeof navigator !== 'undefined' && navigator.share) {
+                          navigator.share({
+                            title: post.title,
+                            text: post.excerpt,
+                            url: typeof window !== 'undefined' ? window.location.href : '',
+                          }).catch(console.error);
+                        } else if (typeof window !== 'undefined') {
+                          navigator.clipboard.writeText(window.location.href)
+                            .then(() => alert('Link copied to clipboard!'))
+                            .catch(console.error);
+                        }
+                      }}
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-gold-500 group-hover:text-gold-400">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                      </svg>
+                    </Button>
+                  </div>
                 </div>
               </div>
               <Link href="/blog">

@@ -1,10 +1,12 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { setViewportHeight } from "@/lib/viewport-height";
-// Service worker registration removed
+import { Toaster } from "sonner";
+import PWAUpdateNotifier from "@/components/pwa-update-notifier";
 import { Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { Phone, MessageCircle } from "lucide-react";
 
 // Load the Inter font with optimal settings for mobile
 const inter = Inter({
@@ -19,31 +21,95 @@ export default function ClientBody({
 }: {
   children: React.ReactNode;
 }) {
-  // Set up viewport height calculations for mobile
+  const [isMounted, setIsMounted] = useState(false);
+
   useEffect(() => {
-    // Set up viewport height adjustment
-    const cleanup = setViewportHeight();
+    setIsMounted(true);
 
-    // Remove any extension-added classes during hydration
-    document.body.className = cn(
-      inter.className,
-      "antialiased overflow-x-hidden text-base touch-manipulation"
-    );
+    // Fix for mobile viewport height issues with address bar
+    function fixViewportHeight() {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    }
 
-    // Service worker registration removed to prevent caching
+    window.addEventListener("resize", fixViewportHeight);
+    fixViewportHeight();
 
-    return cleanup;
+    // Register service worker if supported
+    if (
+      typeof window !== "undefined" &&
+      "serviceWorker" in navigator &&
+      window.workbox !== undefined
+    ) {
+      const registerServiceWorker = async () => {
+        try {
+          const { registerSW } = await import("@/lib/register-service-worker");
+          registerSW();
+        } catch (error) {
+          console.error("Service worker registration failed:", error);
+        }
+      };
+      registerServiceWorker();
+    }
+
+    return () => window.removeEventListener("resize", fixViewportHeight);
   }, []);
+
+  // Don't render on server to prevent hydration errors
+  if (!isMounted) {
+    return <body className="bg-black-950">{children}</body>;
+  }
 
   return (
     <body
       className={cn(
         inter.className,
-        "antialiased overflow-x-hidden text-base touch-manipulation"
+        "antialiased overflow-x-hidden text-base touch-manipulation bg-black-950"
       )}
       suppressHydrationWarning
     >
       {children}
+      <Toaster position="top-center" richColors />
+      <PWAUpdateNotifier />
+
+      {/* Floating Action Buttons */}
+      <div className="fixed bottom-6 right-6 flex flex-col gap-3 z-[99]">
+        {/* Custom pulse animation */}
+        <style jsx global>{`
+          @keyframes subtle-pulse {
+            0% { transform: scale(1); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+            50% { transform: scale(1.05); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+            100% { transform: scale(1); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+          }
+          .whatsapp-btn {
+            animation: subtle-pulse 3s infinite ease-in-out;
+          }
+          .phone-btn {
+            animation: subtle-pulse 3s infinite ease-in-out;
+            animation-delay: 1.5s;
+          }
+        `}</style>
+
+        {/* WhatsApp Button */}
+        <a
+          href="https://wa.me/919419955663"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="whatsapp-btn w-14 h-14 bg-green-500 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 hover:scale-110 transition-colors duration-300"
+          aria-label="Chat on WhatsApp"
+        >
+          <MessageCircle size={24} className="text-white" />
+        </a>
+
+        {/* Phone Button */}
+        <a
+          href="tel:+919419955663"
+          className="phone-btn w-14 h-14 bg-red-500 rounded-full flex items-center justify-center shadow-lg hover:bg-red-600 hover:scale-110 transition-colors duration-300"
+          aria-label="Call us"
+        >
+          <Phone size={24} className="text-white" />
+        </a>
+      </div>
     </body>
   );
 }

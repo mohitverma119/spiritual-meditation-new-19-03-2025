@@ -40,7 +40,7 @@ export default function PackagesSection() {
           {featuredPackages.map((pkg, index) => (
             <div
               key={pkg.id}
-              className="bg-black-600/40 backdrop-blur-sm border border-white/10 hover:border-gold-500/20 rounded-xl overflow-hidden transition-all duration-300 animate-fade-in-up hover-lift hover-glow"
+              className="bg-black-500/40 backdrop-blur-sm border border-white/10 hover:border-gold-500/20 rounded-xl overflow-hidden transition-all duration-300 animate-fade-in-up hover-lift hover-glow"
               style={{ animationDelay: `${0.2 + index * 0.1}s` }}
             >
               {/* Package Image */}
