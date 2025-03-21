@@ -60,7 +60,7 @@ export default function PackageDetailPage() {
             />
           </div>
 
-          <div className="container mt-6 mx-auto px-4 relative h-full flex flex-col justify-end py-12 z-10">
+          <div className="container mt-4 mx-auto px-4 relative h-full flex flex-col justify-end py-12 z-10">
             <div className="animate-fade-in mb-8">
               {/* Back Button */}
               <Link href="/packages" className="inline-flex items-center text-white/80 hover:text-white mb-6 transition-colors">
