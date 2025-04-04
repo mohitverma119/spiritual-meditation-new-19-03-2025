@@ -26,11 +26,6 @@ export default function Home() {
           <OverviewSection />
         </div>
 
-        {/* Testimonials section */}
-        <div id="testimonials">
-          <TestimonialsSection />
-        </div>
-
         {/* Gallery section */}
         <div id="gallery">
           <GallerySection />
@@ -44,6 +39,11 @@ export default function Home() {
         {/* Blog section */}
         <div id="blog">
           <BlogSection />
+        </div>
+
+        {/* Testimonials section */}
+        <div id="testimonials">
+          <TestimonialsSection />
         </div>
 
         {/* Contact section */}

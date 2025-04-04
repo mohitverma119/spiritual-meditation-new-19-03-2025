@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { useParams, usePathname } from "next/navigation";
-import blogPosts from "@/data/blogPosts.json";
+import blogPosts from "@/data/updatedBlogPosts.json";
 
 // Define a proper type for debug state
 interface DebugInfo {

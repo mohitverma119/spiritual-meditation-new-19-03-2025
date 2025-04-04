@@ -6,13 +6,13 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import blogPosts from "@/data/blogPosts.json";
+import blogPosts from "@/data/updatedBlogPosts.json";
 
 // Extract unique categories from blog posts
 const categories = ["All", ...Array.from(new Set(blogPosts.map((post) => post.category)))];
 
 // Number of posts per page
-const POSTS_PER_PAGE = 6;
+const POSTS_PER_PAGE = 9;
 
 export default function BlogPage() {
   const [activeCategory, setActiveCategory] = useState<string>("All");
