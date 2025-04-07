@@ -19,6 +19,14 @@ export default function BlogPage() {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [currentPage, setCurrentPage] = useState<number>(1);
 
+  // Function to scroll to top of the page
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
   // Filter posts based on category and search term
   const filteredPosts = useMemo(() => {
     return blogPosts.filter((post) => {
@@ -190,7 +198,10 @@ export default function BlogPage() {
                 <Button
                   variant="outline"
                   size="icon"
-                  onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                  onClick={() => {
+                    setCurrentPage(prev => Math.max(prev - 1, 1));
+                    scrollToTop();
+                  }}
                   disabled={currentPage === 1}
                   className="w-10 h-10 rounded-full border-white/20 text-white disabled:opacity-50"
                 >
@@ -204,7 +215,10 @@ export default function BlogPage() {
                     <Button
                       key={number}
                       variant={currentPage === number ? "default" : "outline"}
-                      onClick={() => setCurrentPage(number)}
+                      onClick={() => {
+                        setCurrentPage(number);
+                        scrollToTop();
+                      }}
                       className={`rounded-full min-w-10 h-10 ${
                         currentPage === number
                           ? "bg-gold-500 hover:bg-gold-600 text-black-950"
@@ -219,7 +233,10 @@ export default function BlogPage() {
                 <Button
                   variant="outline"
                   size="icon"
-                  onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                  onClick={() => {
+                    setCurrentPage(prev => Math.min(prev + 1, totalPages));
+                    scrollToTop();
+                  }}
                   disabled={currentPage === totalPages}
                   className="w-10 h-10 rounded-full border-white/20 text-white disabled:opacity-50"
                 >

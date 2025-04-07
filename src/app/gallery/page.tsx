@@ -19,6 +19,14 @@ export default function GalleryPage() {
   const [selectedImage, setSelectedImage] = useState<typeof galleryImages[0] | null>(null);
   const [currentPage, setCurrentPage] = useState<number>(1);
 
+  // Function to scroll to top of the page
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
   // Filter images based on selected category
   const filteredImages = useMemo(() => {
     return activeCategory === "all"
@@ -135,7 +143,10 @@ export default function GalleryPage() {
                 <Button
                   variant="outline"
                   size="icon"
-                  onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+                  onClick={() => {
+                    setCurrentPage(prev => Math.max(prev - 1, 1));
+                    scrollToTop();
+                  }}
                   disabled={currentPage === 1}
                   className="w-10 h-10 rounded-full border-white/20 text-white disabled:opacity-50"
                 >
@@ -149,7 +160,10 @@ export default function GalleryPage() {
                     <Button
                       key={number}
                       variant={currentPage === number ? "default" : "outline"}
-                      onClick={() => setCurrentPage(number)}
+                      onClick={() => {
+                        setCurrentPage(number);
+                        scrollToTop();
+                      }}
                       className={`rounded-full min-w-10 h-10 ${
                         currentPage === number
                           ? "bg-gold-500 hover:bg-gold-600 text-black-950"
@@ -164,7 +178,10 @@ export default function GalleryPage() {
                 <Button
                   variant="outline"
                   size="icon"
-                  onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+                  onClick={() => {
+                    setCurrentPage(prev => Math.min(prev + 1, totalPages));
+                    scrollToTop();
+                  }}
                   disabled={currentPage === totalPages}
                   className="w-10 h-10 rounded-full border-white/20 text-white disabled:opacity-50"
                 >

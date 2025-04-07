@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { packages, packageCategories } from "@/data/packagesData";
@@ -9,6 +9,9 @@ import { MapPin, Calendar, Users, Star, Search, Filter, X } from "lucide-react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
+// Number of packages per page
+const PACKAGES_PER_PAGE = 6;
+
 export default function PackagesPage() {
   const [filteredPackages, setFilteredPackages] = useState(packages);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
@@ -16,6 +19,15 @@ export default function PackagesPage() {
   const [durationFilter, setDurationFilter] = useState<string>("all");
   const [searchTerm, setSearchTerm] = useState("");
   const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+
+  // Function to scroll to top of the page
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
 
   useEffect(() => {
     // Apply filters
@@ -75,6 +87,26 @@ export default function PackagesPage() {
     setPriceRange([0, 5000]);
     setDurationFilter("all");
     setSearchTerm("");
+    setCurrentPage(1);
+  };
+
+  // Calculate pagination
+  const totalPages = Math.ceil(filteredPackages.length / PACKAGES_PER_PAGE);
+  const paginatedPackages = useMemo(() => {
+    const startIndex = (currentPage - 1) * PACKAGES_PER_PAGE;
+    const endIndex = startIndex + PACKAGES_PER_PAGE;
+    return filteredPackages.slice(startIndex, endIndex);
+  }, [filteredPackages, currentPage]);
+
+  // Reset to first page when filters change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchTerm, selectedCategories, priceRange, durationFilter]);
+
+  // Generate page numbers for pagination
+  const pageNumbers = [];
+  for (let i = 1; i <= totalPages; i++) {
+    pageNumbers.push(i);
   };
 
   return (
@@ -312,7 +344,7 @@ export default function PackagesPage() {
                 {/* Packages grid */}
                 {filteredPackages.length > 0 ? (
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {filteredPackages.map((pkg, index) => (
+                    {paginatedPackages.map((pkg, index) => (
                       <div
                         key={pkg.id}
                         className="bg-black-900/40 backdrop-blur-sm border border-white/10 hover:border-gold-500/20 rounded-xl overflow-hidden transition-all duration-300 animate-fade-in-up hover-lift hover-glow"
@@ -378,6 +410,7 @@ export default function PackagesPage() {
                     ))}
                   </div>
                 ) : (
+
                   <div className="text-center py-16 bg-black-900/20 backdrop-blur-sm rounded-xl border border-white/10">
                     <div className="text-white/40 text-5xl mb-4">🔍</div>
                     <h3 className="text-white text-xl font-medium mb-2">No packages found</h3>
@@ -385,6 +418,68 @@ export default function PackagesPage() {
                     <Button onClick={resetFilters} className="bg-gold-500 text-black-950 hover:bg-gold-600">
                       Reset Filters
                     </Button>
+                  </div>
+                )}
+
+                {/* Pagination Controls */}
+                {totalPages > 1 && (
+                  <div className="flex justify-center mt-12 items-center gap-2 animate-fade-in delay-400">
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      onClick={() => {
+                        setCurrentPage(prev => Math.max(prev - 1, 1));
+                        scrollToTop();
+                      }}
+                      disabled={currentPage === 1}
+                      className="w-10 h-10 rounded-full border-white/20 text-white disabled:opacity-50"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </Button>
+
+                    <div className="flex gap-1">
+                      {pageNumbers.map(number => (
+                        <Button
+                          key={number}
+                          variant={currentPage === number ? "default" : "outline"}
+                          onClick={() => {
+                            setCurrentPage(number);
+                            scrollToTop();
+                          }}
+                          className={`rounded-full min-w-10 h-10 ${
+                            currentPage === number
+                              ? "bg-gold-500 hover:bg-gold-600 text-black-950"
+                              : "border-white/20 text-white hover:bg-white/10"
+                          }`}
+                        >
+                          {number}
+                        </Button>
+                      ))}
+                    </div>
+
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      onClick={() => {
+                        setCurrentPage(prev => Math.min(prev + 1, totalPages));
+                        scrollToTop();
+                      }}
+                      disabled={currentPage === totalPages}
+                      className="w-10 h-10 rounded-full border-white/20 text-white disabled:opacity-50"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                      </svg>
+                    </Button>
+                  </div>
+                )}
+
+                {/* Results count */}
+                {filteredPackages.length > 0 && (
+                  <div className="text-center text-white/60 mt-6 animate-fade-in delay-500">
+                    Showing {paginatedPackages.length} of {filteredPackages.length} packages
                   </div>
                 )}
               </div>
